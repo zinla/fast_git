@@ -1,0 +1,8 @@
+// json 用于保存对象
+{
+    "name":"alan",
+    "age":"23",
+    "gender":"male"
+    
+
+}

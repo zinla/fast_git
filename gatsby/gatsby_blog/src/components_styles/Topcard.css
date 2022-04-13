@@ -1,0 +1,52 @@
+:root {
+  --main-bg-color: pink;
+  --gap: 10px;
+  --light-orange: #fff2df;
+}
+
+.article-card.article-card-large {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.Topcard {
+  width: 60vw;
+  height: 40vh;
+}
+
+.article-card {
+  background: #fff;
+  color: #474747;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  -webkit-filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.24));
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.24));
+  display: flex;
+  flex-direction: column;
+}
+.article-article {
+  flex: 1;
+  position: relative;
+  z-index: 5;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card-large .article-article {
+  padding: 3rem;
+}
+.tags {
+  line-height: 1;
+  margin: 0 0 0.5rem;
+}
+.article-card-large .card-content {
+  font-size: 1.2rem;
+}
+.articles-and-sidebar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: var(--gap);
+  margin: 0 auto;
+}

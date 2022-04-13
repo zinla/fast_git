@@ -1,0 +1,19 @@
+{
+  "name": "coin",
+  "version": "1.0.0",
+  "description": "check coin price",
+  "main": "index.js",
+  "bin": "./bin/coin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alen Andry",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "colors": "^1.4.0",
+    "commander": "^7.2.0",
+    "configstore": "^5.0.1",
+    "inquirer": "^8.0.0"
+  }
+}

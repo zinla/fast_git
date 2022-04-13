@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check box</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input type="checkbox" name="" id="all"></td>
+            <td>全选</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="" class="check"></td>
+            <td>人类简史</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="" class="check"></td>
+            <td>今日简史</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="" class="check"></td>
+            <td>12 Rules for life</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="" class="check"></td>
+            <td>Angular programming</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="" class="check"></td>
+            <td>javascript</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="" class="check"></td>
+            <td>python programming</td>
+        </tr>
+    </table>
+    <script>
+        function id(id){
+            return document.querySelector('#'+id);
+        }
+        function cl_all(cl){
+            return document.querySelectorAll('.'+cl);
+        }
+        let all = id('all');
+        let cks = cl_all('check');
+        // console.log(cks);
+        //给全选注册事件
+        all.onclick = function(){
+            // console.log(this.checked);
+            for(let i =0;i<cks.length;i++){
+                cks[i].checked = this.checked;
+            }
+        }
+        //全选函数
+        for(let i =0;i<cks.length;i++){
+            cks[i].onclick = function(){
+                check_all();
+            }
+        }
+        //确定是否全选
+        function check_all(){
+        for(let i =0;i<cks.length;i++){
+            if(!cks[i].checked){//相当于cks[i]==false
+                all.checked =false;
+                return
+            }  
+        }
+        //如果所有为true
+        all.checked = true;
+
+        }
+    </script>
+    
+</body>
+</html>

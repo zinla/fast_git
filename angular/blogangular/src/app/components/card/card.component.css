@@ -1,0 +1,90 @@
+.card-grid.latest-episodes > :first-child,
+.card-grid.latest-episodes > :first-child h3 {
+  font-size: 140%;
+}
+a {
+  color: #ff894e;
+  text-decoration: none;
+}
+.card-grid.latest-episodes > :first-child {
+  grid-column: 1/-1;
+}
+.episode-card {
+  height: 220px;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 10px;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: linear-gradient(85deg,#434343,#262626);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: .2s;
+  /* margin: 0; */
+  box-shadow: -3rem 0 3rem -2rem #000;
+  border-radius: 24px;
+background: #434343;
+box-shadow: inset -36px -36px 72px #373737,
+            inset 36px 36px 72px #4f4f4f;
+}
+
+.episode-card .num {
+  position: absolute;
+  font-size: 8rem;
+  font-weight: 700;
+  top: 0;
+  right: 0;
+  line-height: 0.85;
+  opacity: 0.09;
+}
+.episode-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.episode-card :last-child {
+  margin-bottom: 0;
+}
+.episode-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-grid time {
+  margin: 0 0 1 rem;
+  display: block;
+}
+.card-grid .episode-number,
+.card-grid time {
+  text-transform: uppercase;
+}
+time {
+  text-transform: uppercase;
+  font-size: 80%;
+  letter-spacing: 0.15rem;
+}
+.card-grid.latest-episodes > :first-child,
+.card-grid.latest-episodes > :first-child h3 {
+  font-size: 140%;
+}
+.episode-card :last-child {
+  margin-bottom: 0;
+  margin-left: 1px;
+  line-height: 1.4rem;
+}
+.card-grid h3 {
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+  margin: 0 0 4rem;
+}

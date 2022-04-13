@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS scroll snap</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .container {
+        height: 100vh;
+        overflow-y: scroll;
+        /* 在父容器上面使用 scroll-snap-type 属性 */
+        scroll-snap-type: y mandatory;
+      }
+
+      section {
+        padding: 112px;
+        height: calc(100vh - 224px);
+        color: white;
+        /* 在需要滚动的容器上使用 scroll-snap-align 属性 */
+        scroll-snap-align: start;
+      }
+
+      section:nth-of-type(1) {
+        background-color: #60af15;
+      }
+
+      section:nth-of-type(2) {
+        background-color: #158baf;
+      }
+
+      section:nth-of-type(3) {
+        background-color: #af1581;
+      }
+
+      section h3 {
+        font-size: 48px;
+      }
+
+      section p {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <h3>A subtitle lives here</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+          deleniti dignissimos ducimus expedita iure maxime qui rerum veniam
+          voluptatibus. Accusamus asperiores assumenda atque consectetur
+          consequuntur culpa cum deserunt dicta distinctio error excepturi fuga
+          ipsa iste magnam modi nobis, obcaecati, pariatur perspiciatis placeat
+          quo quod reiciendis repudiandae saepe soluta tempora unde vel? Aliquam
+          exercitationem iste maiores placeat reprehenderit voluptates
+          voluptatum. Ad at commodi culpa cumque debitis delectus dolorum, eius
+          error et explicabo harum in ipsum iste labore laborum libero magni
+          maiores nam non nostrum nulla officia pariatur quam quasi quia quo
+          recusandae reprehenderit saepe similique vel vero vitae voluptas
+          voluptatem! Quibusdam.
+        </p>
+      </section>
+      <section>
+        <h3>A subtitle lives here</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+          deleniti dignissimos ducimus expedita iure maxime qui rerum veniam
+          voluptatibus. Accusamus asperiores assumenda atque consectetur
+          consequuntur culpa cum deserunt dicta distinctio error excepturi fuga
+          ipsa iste magnam modi nobis, obcaecati, pariatur perspiciatis placeat
+          quo quod reiciendis repudiandae saepe soluta tempora unde vel? Aliquam
+          exercitationem iste maiores placeat reprehenderit voluptates
+          voluptatum. Ad at commodi culpa cumque debitis delectus dolorum, eius
+          error et explicabo harum in ipsum iste labore laborum libero magni
+          maiores nam non nostrum nulla officia pariatur quam quasi quia quo
+          recusandae reprehenderit saepe similique vel vero vitae voluptas
+          voluptatem! Quibusdam.
+        </p>
+      </section>
+      <section>
+        <h3>A subtitle lives here</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus
+          deleniti dignissimos ducimus expedita iure maxime qui rerum veniam
+          voluptatibus. Accusamus asperiores assumenda atque consectetur
+          consequuntur culpa cum deserunt dicta distinctio error excepturi fuga
+          ipsa iste magnam modi nobis, obcaecati, pariatur perspiciatis placeat
+          quo quod reiciendis repudiandae saepe soluta tempora unde vel? Aliquam
+          exercitationem iste maiores placeat reprehenderit voluptates
+          voluptatum. Ad at commodi culpa cumque debitis delectus dolorum, eius
+          error et explicabo harum in ipsum iste labore laborum libero magni
+          maiores nam non nostrum nulla officia pariatur quam quasi quia quo
+          recusandae reprehenderit saepe similique vel vero vitae voluptas
+          voluptatem! Quibusdam.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>

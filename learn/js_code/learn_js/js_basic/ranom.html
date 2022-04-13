@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>0-10的生成随机数</h2>
+    <p><span id="random_number"></span></p>
+    <h2>50-80的生成随机数</h2>
+    <p><span id="random_number2"></span></p>
+    <button onclick="reset()">重置</button>
+
+    <script type="text/javascript"> 
+    // 0-10
+        let num1 = Math.floor(Math.random() * 10);
+    // 50-80
+        let get_random = (start,end) =>{
+            return Math.floor(Math.random() * (end - start) +start);
+        }
+        let num2 = get_random(50,80);
+        document.getElementById('random_number').innerHTML = num1;
+        document.getElementById('random_number2').innerHTML = num2;
+        
+        let reset = () =>{
+            document.getElementById('random_number').innerHTML = '默认值0';
+            document.getElementById('random_number2').innerHTML = '默认值0'; 
+        }
+    </script>
+
+</body>
+</html>

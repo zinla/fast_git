@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lunbotu </title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_2561299_apvzb2nymqa.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/tailwindcss/2.1.2/tailwind-dark.min.css" rel="stylesheet">
+
+</head>
+<style>
+    .lunbo{
+        
+        margin-left: 100px;
+    }
+    .lunbo img{
+        width:800px;
+        height:400px;
+    }
+    .arrow{
+        width: 80px;
+        margin: auto 0;
+    }
+    .arrow img{
+        width:80px;
+    }
+    .right img{
+        transform: rotate(180deg);
+    }
+    .arrow img:hover{
+        background: #666;
+    }
+    .imgs{
+        width: 800px;
+        display: inline-grid;
+        grid-gap: 1rem;
+        grid-template-columns: 200px 200px 200px 200px 200px;
+        grid-template-rows: 200px 200px 200px 200px 200px;
+    }
+    .imgs img{
+        align-content: center;
+        justify-content:center;
+        width:300px;
+        margin: 10px 100px;
+    }
+    .dot{
+        width:15px;
+        height:15px;
+        border-radius: 50%;
+        background: gray;
+        margin:0 10px;
+    }
+    .dot.active{
+        background:red;
+    }
+    .lis{
+        margin:0 auto;
+    }
+</style>
+<body>
+    <div id="app">
+        <div class="lunbo flex" >
+            <div class="arrow left" @click="--activeIndex"><img src="./assets//arrow_left.svg" alt=""></div>
+            <img v-show="activeIndex===index" :src="item" alt="img" v-for="(item,index) in imgs">
+            <div class="arrow right" @click="++activeIndex"><img src="./assets//arrow_left.svg" alt=""></div>
+        </div>
+
+        <ul class="flex m-3 p-4 content-center lis">
+            <li @click="activeIndex=index" v-for="(item,index) in imgs" :class="{active:activeIndex===index}" class="dot p-3 bg:red cursor-pointer"></li>
+        </ul>
+
+        <!-- <div class="imgs">
+            <div v-for="(item,idex) in imgs">
+                <img :src="item" alt="">
+            </div>
+        </div> -->
+        
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    activeIndex:0,
+                    imgs:[],
+                }
+            },
+            // 有数据
+            created() {
+                this.getData()
+
+            },
+            // 已经渲染
+            mounted() {
+                this.run()
+            },
+            watch:{
+                activeIndex(nval,oval){
+                    if(nval<0){
+                        this.activeIndex = this.imgs.length-1
+
+                    }else if(nval===this.imgs.length){
+                        this.activeIndex = 0
+                    }
+                    this.run()
+                }
+            },
+            
+            methods:{
+                async getData() {
+                    let re_data = [];
+                    let data = await axios.get("http://p1.music.126.net/").then(r => { return r.data.split("<Key>").map(r=>{ return r.split("</Key>")}).slice(1,)});
+                    data.forEach(e => {
+                        re_data.push("http://p1.music.126.net/"+e[0]);
+                        // console.log(e[0]);    
+                    });
+                    this.imgs = re_data.slice(1,6)
+                    // console.log(re_data);
+                },
+                run(){
+                    setInterval(()=>{ 
+                        ++this.activeIndex
+                    },3000);
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

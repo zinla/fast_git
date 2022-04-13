@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse event</title>
+    <style>
+        #grid{
+            width: 100px;
+            height: 100px;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid">
+
+    </div>
+    <script>
+        let grid = document.querySelector('#grid');
+        grid.onclick = function(){
+            console.log('点击');
+        }
+        //鼠标双击
+        grid.ondblclick = function(){
+            console.log('shuangji');
+        }
+        //鼠标按下
+        grid.mousedown = function(){
+            console.log('按下');
+        }
+        //鼠标弹起
+        grid.onmouseup = function(){
+            console.log('弹起');
+        }
+        //鼠标右点击事件
+        grid.oncontextmenu = function(){
+            console.log('shuangji');
+        }
+        //鼠标进入事件
+        grid.onmouseenter = function(){
+            console.log('进入');
+        }
+        //鼠标离开事件
+        grid.onmouseout = function(){
+            console.log('离开');
+        }
+        //鼠标进入事件  在mouseenter之前触发
+        grid.onmouseover = function(){
+            console.log('进入');
+        }
+        
+        //鼠标离开事件 在mouseout之之后触发 
+        grid.onmouseleave = function(){
+            console.log('离开');
+        }
+    </script>
+</body>
+</html>

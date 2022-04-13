@@ -1,0 +1,148 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "blogangular": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "css"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "css",
+            "assets": [
+              "src/index.html",
+              "src/favicon.ico",
+              "src/assets",
+              "src/markdown-files"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "./node_modules/ngx-markdown-editor/assets/highlight.js/agate.min.css",
+              "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
+              "./node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css",
+              "./node_modules/prismjs/themes/prism-okaidia.css",
+              "./node_modules/prismjs/plugins/command-line/prism-command-line.css",
+              "./node_modules/prismjs/plugins/inline-color/prism-inline-color.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "./node_modules/marked/lib/marked.js",
+              "./node_modules/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js",
+              "./node_modules/prismjs/prism.js",
+              "./node_modules/prismjs/components/prism-csharp.min.js",
+              "./node_modules/prismjs/components/prism-c.min.js",
+              "./node_modules/prismjs/components/prism-cpp.min.js",
+              "./node_modules/prismjs/components/prism-sql.min.js",
+              "./node_modules/prismjs/components/prism-yaml.min.js",
+              "./node_modules/prismjs/components/prism-java.min.js",
+              "./node_modules/prismjs/components/prism-python.min.js",
+              "./node_modules/prismjs/components/prism-rust.min.js",
+              "./node_modules/prismjs/components/prism-js-extras",
+              "./node_modules/prismjs/components/prism-css.min.js",
+              "./node_modules/prismjs/components/prism-bash.min.js",
+              "./node_modules/prismjs/components/prism-typescript.min.js",
+              "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js",
+              "./node_modules/prismjs/plugins/inline-color/prism-inline-color.min.js",
+              "./node_modules/emoji-toolkit/lib/js/joypixels.min.js",
+              "./node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js",
+              "./node_modules/ngx-markdown-editor/assets/highlight.js/highlight.min.js",
+              "./node_modules/prismjs/plugins/command-line/prism-command-line.js",
+              "./node_modules/ngx-markdown-editor/assets/marked.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "none"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "blogangular:build:production"
+            },
+            "development": {
+              "browserTarget": "blogangular:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "blogangular:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "css",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
+        }
+      }
+    }
+  },
+  "defaultProject": "blogangular"
+}

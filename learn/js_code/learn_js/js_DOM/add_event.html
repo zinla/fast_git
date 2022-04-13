@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one{
+            background-color: #d484d4;
+            width: 200px;
+            height: 200px;
+            /* position: absolute; */
+        }
+        #two{
+            background-color: #4d3d4d;
+            width: 200px;
+            height: 200px;
+            /* position: absolute; */
+        }
+        #three{
+            background-color: #db07db;
+            width: 200px;
+            height: 200px;
+            /* position: absolute; */
+        }
+        #four{
+            background-color: #000000;
+            width: 200px;
+            height: 200px;  
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- //1.直接添加 -->
+    <div id="one" onclick="fun1(this)"></div>
+    <p id="two" onclick="fun1(this)"></p>
+    <div id="three"></div>
+    <div id="four"></div>
+    
+
+    <script>
+        function fun1(){
+            console.log('one-two');
+        }
+        // 2.先获取DOM再用onclick
+        let three = document.querySelector('#three');
+        three.onclick = function(){
+           console.log('three'); 
+        }
+        // 3.添加事件监听 (可以添加多个事件)
+        let four = document.querySelector('#four');
+        four.addEventListener('click',function(){
+            console.log('事件监听');
+        })
+        four.addEventListener('click',function(){
+            console.log('监听');
+        })
+        
+        let add_Listener = function(){
+            console.log('HAS added');
+        }
+        four.addEventListener('click',add_Listener)
+
+       
+    </script>
+    
+</body>
+</html>

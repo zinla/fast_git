@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(158, 163, 172);
+            display: grid;
+        }
+    </style>
+</head>
+
+<body>
+    <div style=" margin: auto;
+    ">
+        <h2>shopping card</h2>
+    </div>
+    <div style="margin: auto;">
+        <table border=6 frame=void align=left width=750px height=100px cellspacing=0px cellpadding=10px>
+
+            <tr height=50px align=center>
+                <td>名称</td>
+                <td>数量</td>
+                <td>价格</td>
+                <td>优惠</td>
+
+
+            </tr>
+            <tr>
+                <td>耳机</td>
+                <td><input type="number" id="amount1"></td>
+                <td><input type="number" id="price1">元</td>
+                <td><input type="text" id="discount1">折</td>
+            </tr>
+            <tr>
+                <td>充电器</td>
+                <td><input type="number" id="amount2"></td>
+                <td><input type="number" id="price2">元</td>
+                <td><input type="text" id="discount2">折</td>
+            </tr>
+            <tr>
+                <td>鼠标</td>
+                <td><input type="number" id="amount3"></td>
+                <td><input type="number" id="price3">元</td>
+                <td><input type="text" id="discount3">折</td>
+            </tr>
+            <tr>
+                <td>DSP线</td>
+                <td><input type="number" id="amount4"></td>
+                <td><input type="number" id="price4">元</td>
+                <td><input type="text" id="discount4">折</td>
+            </tr>
+        </table>
+    </div>
+    <br />
+
+    <div style="margin: auto;">
+        <button onclick="Calculation()" style="margin-bottom: 2rem;">计算</button>
+    </div>
+    <div style="margin: auto;">
+        <table border=6 frame=void align=left width=200px height=100px cellspacing=0px cellpadding=10px>
+            <tr>
+                <td>总价</td>
+                <td id="totalPrice"></td>
+
+
+            </tr>
+            <tr>
+                <td>原价</td>
+                <td></td>
+
+
+            </tr>
+            <tr>
+                <td>总优惠</td>
+                <td></td>
+
+
+            </tr>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        let Calculation = () => {
+
+            let result = document.getElementById('totalPrice');
+            // let all_count = per_Calculation();
+            result.innerHTML = per_Calculation();
+
+        }
+        let per_Calculation = () => {
+            let amount = document.getElementById("amount1");
+            let price = document.getElementById("price1");
+            let discount = document.getElementById("discount1");
+            let count = amount.value * (price.value * discount.value) / 10;
+            return count;
+
+        }
+    </script>
+
+</body>
+
+</html>

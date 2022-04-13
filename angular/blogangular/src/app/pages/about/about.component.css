@@ -1,0 +1,38 @@
+img:not(.logo-img) {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  border-radius: 0.5rem;
+}
+p {
+  line-height: 2em;
+  font-size: 1.2rem;
+}
+ul li {
+  line-height: 2em;
+  font-size: 1.2rem;
+}
+@media screen and (min-width: 1200px) {
+  img {
+    max-width: 20vw;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+  img {
+    max-width: 25vw;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  img {
+    max-width: 30vw;
+  }
+}
+@media only screen and (min-width: 520px) and (max-width: 767px) {
+  img {
+    max-width: 35vw;
+  }
+}
+@media only screen and (max-width: 520px) {
+  img {
+    max-width: 50%;
+  }
+}

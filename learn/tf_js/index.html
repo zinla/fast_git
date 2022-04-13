@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TensorFlow.js</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Jason Mayes">
+
+    <style>
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+  color: #3D3D3D;
+}
+
+h1 {
+  font-style: italic;
+  color: #FF6F00;
+}
+
+h2 {
+  clear: both;
+}
+
+em {
+  font-weight: bold;
+}
+
+video {
+  clear: both;
+  display: block;
+}
+
+section {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+header, footer {
+  clear: both;
+}
+
+.removed {
+  display: none;
+}
+
+.invisible {
+  opacity: 0.2;
+}
+
+.note {
+  font-style: italic;
+  font-size: 130%;
+}
+
+.videoView, .classifyOnClick {
+  position: relative;
+  float: left;
+  width: 48%;
+  margin: 2% 1%;
+  cursor: pointer;
+}
+
+.videoView p, .classifyOnClick p {
+  position: absolute;
+  padding: 5px;
+  background-color: rgba(255, 111, 0, 0.85);
+  color: #FFF;
+  border: 1px dashed rgba(255, 255, 255, 0.7);
+  z-index: 2;
+  font-size: 12px;
+  margin: 0;
+}
+
+.highlighter {
+  background: rgba(0, 255, 0, 0.25);
+  border: 1px dashed #fff;
+  z-index: 1;
+  position: absolute;
+}
+
+.classifyOnClick {
+  z-index: 0;
+}
+
+.classifyOnClick img {
+  width: 50%;
+}
+</style>
+  </head>  
+  <body>
+    <section id="demos" class="invisible">
+      <div class="classifyOnClick">
+        <img src="https://cdn.glitch.com/74418d0b-3465-49a2-8c71-a721b7734473%2Fdogs_flickr_publicdomain.jpg?v=1579294514974" width="50%" crossorigin="anonymous" title="Click to get classification!" />
+      </div>
+      <div class="classifyOnClick">
+        <img src="https://cdn.glitch.com/74418d0b-3465-49a2-8c71-a721b7734473%2Fcats_flickr_publicdomain.jpg?v=1579294753947" width="50%" crossorigin="anonymous" title="Click to get classification!" />
+      </div>
+
+      
+      <div id="liveView" class="videoView">
+        <button id="webcamButton">Enable Webcam</button>
+        <video id="webcam" autoplay></video>
+      </div>
+    </section>
+
+    
+    <!-- Import TensorFlow.js library -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js" type="text/javascript"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/tensorflow/3.4.0/tf.min.js"></script>
+    
+    <!-- Load the coco-ssd model to use to recognize things in images -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2/dist/coco-ssd.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2/dist/coco-ssd.min.js"
+        integrity="sha256-37b6iXyjQMu0EPoWyZUb5jgAirPcOddX0kPWjxBEMFs=" crossorigin="anonymous"></script>
+    
+    
+    <!-- Import the page's JavaScript to do some stuff -->
+    <script>
+
+            const demosSection = document.getElementById('demos');
+
+            var model = undefined;
+
+            
+            cocoSsd.load().then(function (loadedModel) {
+                model = loadedModel;
+               
+                demosSection.classList.remove('invisible');
+            });
+
+
+          
+            const imageContainers = document.getElementsByClassName('classifyOnClick');
+
+          
+            for (let i = 0; i < imageContainers.length; i++) {
+                // Add event listener to the child element whichis the img element.
+                imageContainers[i].children[0].addEventListener('click', handleClick);
+            }
+
+            // When an image is clicked, let's classify it and display results!
+            function handleClick(event) {
+                if (!model) {
+                    console.log('Wait for model to load before clicking!');
+                    return;
+                }
+
+               
+                model.detect(event.target).then(function (predictions) {
+                   
+                    console.log(predictions);
+                    console.log(predictions[0].class);
+                    for (let n = 0; n < predictions.length; n++) {
+                        // Description text
+                        const p = document.createElement('p');
+                        p.innerText = predictions[n].class + ' - with '
+                            + Math.round(parseFloat(predictions[n].score) * 100)
+                            + '% confidence.';
+                        
+                        p.style = 'left: ' + predictions[n].bbox[0] + 'px;' +
+                            'top: ' + predictions[n].bbox[1] + 'px; ' +
+                            'width: ' + (predictions[n].bbox[2] - 10) + 'px;';
+
+                        const highlighter = document.createElement('div');
+                        highlighter.setAttribute('class', 'highlighter');
+                        highlighter.style = 'left: ' + predictions[n].bbox[0] + 'px;' +
+                            'top: ' + predictions[n].bbox[1] + 'px;' +
+                            'width: ' + predictions[n].bbox[2] + 'px;' +
+                            'height: ' + predictions[n].bbox[3] + 'px;';
+
+                        event.target.parentNode.appendChild(highlighter);
+                        event.target.parentNode.appendChild(p);
+                    }
+                });
+            }
+
+
+
+          
+            const video = document.getElementById('webcam');
+            const liveView = document.getElementById('liveView');
+
+            // Check if webcam access is supported.
+            function hasGetUserMedia() {
+                return !!(navigator.mediaDevices &&
+                    navigator.mediaDevices.getUserMedia);
+            }
+
+            var children = [];
+
+
+            if (hasGetUserMedia()) {
+                const enableWebcamButton = document.getElementById('webcamButton');
+                enableWebcamButton.addEventListener('click', enableCam);
+            } else {
+                console.warn('getUserMedia() is not supported by your browser');
+            }
+
+
+            // Enable the live webcam view and start classification.
+            function enableCam(event) {
+                if (!model) {
+                    console.log('Wait! Model not loaded yet.')
+                    return;
+                }
+
+                // Hide the button.
+                event.target.classList.add('removed');
+
+                // getUsermedia parameters.
+                const constraints = {
+                    video: true
+                };
+
+                // Activate the webcam stream.
+                navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
+                    video.srcObject = stream;
+                    video.addEventListener('loadeddata', predictWebcam);
+                });
+            }
+
+
+            function predictWebcam() {
+                // Now let's start classifying the stream.
+                model.detect(video).then(function (predictions) {
+                    // Remove any highlighting we did previous frame.
+                    // console.log(children);
+                    for (let i = 0; i < children.length; i++) {
+                        liveView.removeChild(children[i]);
+                    }
+                    children.splice(0);
+                    console.log(predictions);
+
+    
+                    for (let n = 0; n < predictions.length; n++) {
+                        // If we are over 66% sure we are sure we classified it right, draw it!
+                        if (predictions[n].score > 0.66) {
+                            // console.log(predictions[0].bbox[0])
+                            const p = document.createElement('p');
+                            p.innerText = predictions[n].class + ' - with '
+                                + Math.round(parseFloat(predictions[n].score) * 100)
+                                + '% confidence.';
+                            // Draw in top left of bounding box outline.
+                            p.style = 'left: ' + predictions[n].bbox[0] + 'px;' +
+                                'top: ' + predictions[n].bbox[1] + 'px;' +
+                                'width: ' + (predictions[n].bbox[2] - 10) + 'px;';
+
+                            // Draw the actual bounding box.
+                            const highlighter = document.createElement('div');
+                            highlighter.setAttribute('class', 'highlighter');
+                            highlighter.style = 'left: ' + predictions[n].bbox[0] + 'px; top: '
+                                + predictions[n].bbox[1] + 'px; width: '
+                                + predictions[n].bbox[2] + 'px; height: '
+                                + predictions[n].bbox[3] + 'px;';
+
+                            liveView.appendChild(highlighter);
+                            liveView.appendChild(p);
+
+                            // Store drawn objects in memory so we can delete them next time around.
+                            children.push(highlighter);
+                            children.push(p);
+                        }
+                    }
+
+                    // Call this function again to keep predicting when the browser is ready.
+                    window.requestAnimationFrame(predictWebcam);
+                });
+            }
+
+    </script>
+  </body>
+</html>

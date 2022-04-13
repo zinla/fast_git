@@ -1,0 +1,24 @@
+.webpage {
+    background: url(/images/wallpaper3.jpg);
+    height: 920px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: 0 0;
+  }
+  .webcards{
+      margin-bottom: auto;
+      margin-top: 10px;
+    margin: 0px 40px 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    justify-items: center;
+  }
+  .pl{
+      margin: 150px auto;
+      text-align: center;
+    justify-items: center;
+
+  }
+  

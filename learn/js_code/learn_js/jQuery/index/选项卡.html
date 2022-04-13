@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    #tab{
+      width: 500px;
+      height: 500px;
+      margin: 20px auto;
+    }
+    .title{
+      display: flex;
+      justify-content: center;
+    }
+    .title li{
+      padding: 5px 20px;
+      border: 1px solid red;
+      margin: 0 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .title li.active{
+        background-color: orange;
+        color: white;
+    }
+    .list{
+        margin:1rem;
+    }
+    .list li{
+        display: none;
+        list-style: 1rem;
+    }
+    .list li:nth-last-child(3){
+        display: block;
+    }
+
+
+    </style>
+</head>
+<body>
+  <div class="" id="tab">
+
+
+    <ul class="title">
+        <li class="active">javascript</li>
+        <li>python</li>
+        <li>java</li>
+    </ul>
+    <ul class="list">
+      <li class="show">javascript 好</li>
+      <li>python  好</li>
+      <li>java 好</li>
+     
+    </ul>
+  </div>
+
+
+    <script>
+        $('.title li').click(function(){
+            $(this).addClass('active').siblings().removeClass('active')
+            console.log($(this).index());
+            //eq() 根据索引值返回 元素
+            // index() 返回索引值
+            $(".list li").eq($(this).index()).show().siblings().hide();
+        })
+
+    </script>
+</body>
+</html>

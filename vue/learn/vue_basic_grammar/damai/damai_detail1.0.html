@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情页</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .detail{
+            width:800px;
+            /* border:1px solid red; */
+            margin: 10px;
+
+        }
+        .detail>img{
+            height: 350px;
+        }
+        .right{
+            margin-left: 10px;
+        }
+        .right>div{
+            margin: 20px 0;
+        }
+        .right>.title{
+            font-weight: bold;
+            font: size 18px;
+        }
+        .price li:not(:first-child){
+            margin:0 10px;
+            border:1px solid #eee;
+            padding:5px 10px;
+            cursor: pointer;
+        }
+        .price li.active{
+            background:orangered;
+        }
+        .count{
+            margin-left: 10px;
+        }
+        .count>button{
+            padding:0 5px;
+            margin:0 5px
+        }
+        .count>input{
+            width:40px;
+            text-align: center;
+            border:none;
+        }
+        .totalprice{
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="flex detail">
+        <img :src="info.verticalPic" alt="img">
+        <div class="right">
+            <div class="title">{{info.name}}</div>
+            <div>时间：{{info.showtime}}</div>
+            <div>场馆：{{info.venue}}</div>
+
+            <ul class="flex a-c price">
+                <li>票档：</li>
+                <li @click="activeIndex=index" :class="{active:activeIndex===index}" v-for="(item,index) in priceList">{{item}}</li>
+            </ul>
+            <div class="flex">
+                <span>数量：</span>
+                <div class="flex a-c count">
+                    <button @click="count--" :disabled="count===1">-</button><input type="text" v-model="count" @input="setCount"><button @click="count++" :disabled="count===6">-</button>
+                </div>
+                <div>
+                    每笔订单限购6张
+                </div>
+            </div>
+            <div class="flex">
+                <div>合计</div>
+                <div class="totalprice">￥{{total | toFix}}</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script>
+        Vue.config.productionTip = false
+        // vue 的过滤器 局部使用的改为全局使用 Vue.filter   局部filters:{}
+        Vue.filter("toFix",function(val){
+            return val.toFixed(2)
+        })
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                   info:{
+                   },
+                   activeIndex:0,
+                   priceList:[188,388,588,888],
+                   count:1,
+                }
+            },
+            // vue 的过滤器 局部使用
+            // filters:{
+            //     "toFix":function(val){
+            //         return val.toFixed(2)
+            //     }
+            // },
+            computed:{
+                total(){
+                    return (this.priceList[this.activeIndex]*this.count);
+                }
+            },
+            // data会加载完成
+            async created() {
+                let search = location.search;
+                let id = search.split("=")[1];
+                // get data
+                let data = await axios.get("./data/data.json").then(r => { return r.data.pageData.resultData });
+                this.info = data.find(r=>r.id===id)
+                // console.log(data);
+                console.log(this.info);
+
+            },
+            methods: {
+                setCount(e){
+                    let {target:{value}} = e;
+                    if(isNaN(value)) value = 1
+                    if(value<1) value = 1
+                    if (value>6) value = 6
+                    if(!Number.isInteger(value)) value = Math.floor(value)
+                    this.count = value
+                }
+            },
+
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,86 @@
+---
+title: 'Install a Package from AUR || Or Manually install'
+date: '2021-08-15'
+tags: ['yay', 'aur', 'archlinux', 'pacman']
+draft: false
+summary: 'The Time Traveller (for so it will be convenient to speak of him) was
+expounding a recondite matter to us. His pale grey eyes shone and
+twinkled, and his usually pale face was flushed and animated...'
+---
+
+# Install a Package from AUR || Or Manually install
+
+_Title_: Install a Package from AUR || Or Manually install
+
+_Author_: Alen Andry
+
+_Subject_: Science Fiction
+
+_Language_: English
+
+_Source_: [Alen's Juejin](https://juejin.cn/post/6993209916504670221)
+
+## Steps
+
+Now it's time to learn how to install AUR packages via command line. You can install packages from the AUR manually by using`git`and`makepkg`, or use an “AUR helper” program which streamlines the process. One we like to use is called “yay,” so that's the method we'll be covering in this section. You'll also see how to do the manual method, since we must use it in order to install`yay`in the first place.
+
+Let's start by installing`yay`with these steps:
+
+1.  Open a terminal and execute this command to install`git`:
+
+    ```
+    $ sudo pacman -S git
+    ```
+
+1.  Then, clone the`yay`git repository:
+
+    ```
+    $ git clone https://aur.archlinux.org/yay-git.git
+    ```
+
+1.  Change directory into the newly created`yay-git`folder and execute the`makepkg`command like so:
+
+    ```
+    $ cd yay-git
+    $ makepkg -si
+    ```
+
+`yay`will now be installed. You can expect it to take some time, as it will have to download all the necessary dependencies as well. Now we can use`yay`to install a package from the AUR. Let's stick with our previous example of installing Dropbox.
+## Sometime beacause of network can't download package 
+Open a terminal and use the following command to install Dropbox or some other package from the AUR:
+
+```
+$ yay -S caffe
+```
+
+<div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    <Image loader={myLoader} alt="Maple" src="/static/images/2021-09-01_10-32.png" width={640} height={427} />
+</div>
+***
+cd to the .cache folder
+```bash
+$ cd .cache/yay
+or
+$ cd .cache/pacman
+```
+find the package folder that we want to install
+
+<div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    <Image loader={myLoader} alt="Maple" src="/static/images/2021-09-01_10-36.png" width={640} height={427} />
+</div>
+
+***
+### open PKGBUILD file and find download url and download manually, change url to local downloaded package url
+<div className="my-1 px-2 w-full overflow-hidden xl:my-1 xl:px-2 xl:w-1/2">
+    <Image loader={myLoader} alt="Maple" src="/static/images/10_39.png" width={640} height={227} />
+</div>
+
+Output from yay when installing a package from AUR
+
+As you can see, you use`yay`pretty much the same way you use Manjaro's default package manager, pacman. The only difference is that it's not necessary to run the command as root. As you might expect, updating packages from the AUR also follows the same syntax as pacman:
+
+```
+$ yay -Syu
+```
+
+That's all there is to it. Now you can use`yay`from the command line to install any packages from the AUR and keep them up to date.

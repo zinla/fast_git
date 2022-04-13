@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        th,td{
+            padding: 5px 10px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let data = [
+            {
+                name:'Alen',
+                age:23,
+                class_:1
+            },
+            {
+                name:"andry",
+                age:25,
+                class_:2
+            },
+            {
+                name:"ops",
+                age:25,
+                class_:3
+            }];
+        let table = document.createElement('table');
+        let tr = document.createElement('tr');
+        // let td1 = document.createElement('td');
+        // td1.innerHTML = "mali";        
+        // let td2 = document.createElement('td');
+        // td2.innerHTML = "michelle";
+        // tr.appendChild(td1);
+        // tr.appendChild(td2);
+
+        let th1 = document.createElement('th');
+        th1.innerHTML = "姓名";        
+        let th2 = document.createElement('th');
+        th2.innerHTML = "学号";
+        let th3 = document.createElement('th');
+        th3.innerHTML = "班级";
+        let th4 = document.createElement('th');
+        th4.innerHTML = "删除";
+        tr.appendChild(th1);
+        tr.appendChild(th2);
+        tr.appendChild(th3);
+        tr.appendChild(th4);
+        table.appendChild(tr);
+
+        data.forEach((item) =>{
+            // console.log(item);
+            let tr = document.createElement('tr');
+            let td_name = document.createElement('td');
+            td_name.innerHTML = item.name;
+            let td_age = document.createElement('td');
+            td_age.innerHTML = item.age;
+            let td_class = document.createElement('td');
+            td_class.innerHTML = item.class_;
+            let td_del = document.createElement('td');
+            td_del.innerHTML = 'del';
+            td_del.onclick = () =>{
+                //点击删除同一行
+                //solution1
+                // tr.remove();
+                //solution2
+                // table.removeChild(tr);
+                //solution3
+                td_del.parentElement.remove();
+            }
+            tr.appendChild(td_name);
+            tr.appendChild(td_age);
+            tr.appendChild(td_class);
+            tr.appendChild(td_del);
+            table.appendChild(tr);
+
+        });
+        document.body.appendChild(table);
+
+    </script>
+    
+</body>
+</html>

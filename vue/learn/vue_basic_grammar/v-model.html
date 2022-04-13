@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-model</title>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>name</td>
+                    <td>price</td>
+                    <td>count</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                myList:[{
+                        name:"xiaomi",
+                        price:4500,
+                        isjeck:false,
+                        count:2
+
+                    },
+                    {
+                        name: "xiaomi",
+                        price: 4500,
+                        isjeck: false,
+                        count: 5
+
+                    },
+                    {
+                        name: "xiaomi",
+                        price: 4500,
+                        isjeck: false,
+                        count: 1
+
+                    },
+                    {
+                        name: "sanmung",
+                        price: 400,
+                        isjeck: false,
+                        count: 3
+
+                    },
+                    {
+                        name: "huawei",
+                        price: 4500,
+                        isjeck: false,
+                        count: 5
+
+                    },
+            ]
+
+            },
+
+        })
+    </script>
+</body>
+</html>

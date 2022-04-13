@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grammar</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{name1}}----{{age}}----{{address}}</h1>
+        <!-- v-bind是指定属性 -->
+        <!-- 条件true name1 else name2 -->
+        <!-- v-on: 添加事件 -->
+        <!-- :是v-bind:简写 @是 v-on:简写 -->
+        <input type="text" v-bind:value="1===1?name1:name2" v-on:input="setname">
+        <input type="text" :value="age" @input="setage">
+        <input type="text" :value="age" @input="age=$event.target.value">
+        <!-- v-model实现双向绑定   对 :value="age" @input="age=$event.target.value"的封装-->
+        <input type="text" v-model="address">
+        
+        <button @click="add">add</button>
+
+        <ul>
+            <!-- v-for用于循环 -->
+            <li v-for="(item,index) in user">{{index}}---{{item.name}}---{{item.age}}---{{item.address}}</li>
+        </ul>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script>
+        // Vue.config.devtools = false;//屏蔽devtools
+        Vue.config.devtools = true;
+        Vue.config.productionTip = false
+        // 创建vue对象
+        new Vue({
+            // 制定服务器
+            el:"#app",//指定渲染的容器
+            data(){//放数据
+                return {
+                    name1:"Alen",
+                    name2:"Andry",
+                    age:"25",
+                    address:"xxx",
+                    user: [{
+                        nickname:"alen",
+                        age:24,
+                        address:"xian"
+                    },{
+                        nickname: "alen",
+                        age: 22,
+                        address:"shanghai"
+                    }]
+                }
+            },
+            methods:{//放方法
+                    setname(e){
+                        //e是事件方法的对象
+                        this.name1 = e.target.value;
+                        console.log(e.target.value);
+                    },
+                    setage(e){
+                        this.age = e.target.value;
+                        console.log(this.age);
+                    },
+                    add(){
+                        this.user.push({
+                            name:this.name,
+                            age:this.age,
+                            address:this.address
+                        })
+                    }
+
+            }
+        })
+    </script>
+    
+</body>
+</html>

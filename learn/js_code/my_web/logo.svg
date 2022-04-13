@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="46px" height="40px" viewBox="0 0 46 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>编组 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="46.1223928%" id="linearGradient-1">
+            <stop stop-color="#0088FF" offset="0%"></stop>
+            <stop stop-color="#00FFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="leap-up-1备份" transform="translate(-927.000000, -541.000000)">
+            <g id="编组-10" transform="translate(927.000000, 541.000000)">
+                <g id="编组-9" transform="translate(0.000000, 17.977011)">
+                    <polygon id="矩形" fill="url(#linearGradient-1)" points="-2.40441128e-13 5.05964889 8.28756959 9.0165423e-14 17.1574454 5.40637347 8.86987585 10.4660224"></polygon>
+                    <polygon id="矩形备份-4" fill-opacity="0.5" fill="#0088FF" points="8.86987585 10.4660224 17.1574454 5.40637347 17.1574454 16.0908091 8.86987585 21.150458"></polygon>
+                    <polygon id="矩形" fill="#0088FF" points="0 5.05964889 0 15.7440845 8.86987585 21.150458 8.86987585 10.4660224"></polygon>
+                </g>
+                <g id="编组-9备份" transform="translate(13.747126, 0.000000)">
+                    <polygon id="矩形" fill="url(#linearGradient-1)" points="-2.40441128e-13 5.05964889 8.28756959 1.91111494e-14 17.1574454 5.40637347 8.86987585 10.4660224"></polygon>
+                    <polygon id="矩形备份-4" fill-opacity="0.5" fill="#0088FF" points="8.86987585 10.4660224 17.1574454 5.40637347 17.1574454 16.0908091 8.86987585 21.150458"></polygon>
+                    <polygon id="矩形" fill="#0088FF" points="-5.32907052e-15 5.05964889 -5.32907052e-15 15.7440845 8.86987585 21.150458 8.86987585 10.4660224"></polygon>
+                </g>
+                <g id="编组-9备份-2" transform="translate(28.551724, 17.977011)">
+                    <polygon id="矩形" fill="url(#linearGradient-1)" points="-2.40441128e-13 5.05964889 8.28756959 1.91111494e-14 17.1574454 5.40637347 8.86987585 10.4660224"></polygon>
+                    <polygon id="矩形备份-4" fill-opacity="0.5" fill="#0088FF" points="8.86987585 10.4660224 17.1574454 5.40637347 17.1574454 16.0908091 8.86987585 21.150458"></polygon>
+                    <polygon id="矩形" fill="#0088FF" points="-5.32907052e-15 5.05964889 -5.32907052e-15 15.7440845 8.86987585 21.150458 8.86987585 10.4660224"></polygon>
+                </g>
+                <polyline id="路径-7" stroke="#0088FF" stroke-width="1.05747126" stroke-linecap="square" points="28.5517241 27.7384833 22.8545848 24.8500584 17.3950279 27.7384833"></polyline>
+                <path d="M22.8545848,21.150458 L22.973376,24.8500584" id="路径-8" stroke="#0088FF" stroke-width="1.05747126" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>

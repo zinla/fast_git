@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+table{
+    border-collapse: collapse;
+}
+input,button{
+    outline:none;
+}
+th,td{
+    border:1px solid #eee;
+    padding:5px 10px;
+}
+.flex{
+    display:flex;
+}
+.j-s{
+    justify-content: space-between;
+}
+.j-c{
+    justify-content: center;
+}
+.a-c{
+    align-items: center;
+}

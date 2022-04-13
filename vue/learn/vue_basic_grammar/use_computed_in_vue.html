@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+
+    <div id="app">
+        <div>{{fristName}}.{{lastName}}</div>
+        <div>{{fullName}}</div>
+        <table>
+            <thead>
+                <tr>
+                    <td>编号</td>
+                    <td>名称</td>
+                    <td>单价</td>
+                    <td>数量</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item,index) in goodsList">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.count}}</td>
+                </tr>
+                <tr>
+                    <td colspan="4">总价:{{total}}</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data() {
+                return {
+                    fristName: "Alen",
+                    lastName: "Andry",
+                    goodsList:[
+                        {id:1,
+                        name:"iphone12",
+                        price:1000,
+                        count:2
+                        },{
+                        id: 1,
+                        name: "iphone12",
+                        price: 2000,
+                        count: 2
+                        },{
+                        id:1,
+                        name:"iphone13",
+                        price:3000,
+                        count:2
+                        },{
+                        id: 1,
+                        name: "iphone14",
+                        price: 4000,
+                        count: 2
+                        },
+                    ]
+                }
+            },
+            computed:{
+                // 计算属性 可以用于对data处理 ，以数据的方式返回
+                fullName(){
+                    return this.fristName+"."+this.lastName
+                },
+                total(){
+                    //use forEach 
+                    // let sumUp =0;
+                    // this.goodsList.forEach(function(value){
+                    //     sumUp+=value.price*value.count
+                    // })
+
+                    // use 函数式编程
+                    let sumUp = this.goodsList.map(r=>r.price*r.count).reduce((a,b)=>{
+                        return a+b
+                    })
+                    return sumUp
+                }
+            }
+        })
+    </script>
+</body>
+</html>

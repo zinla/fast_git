@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 800px;
+            height: 600px;
+        }
+        td,th{
+            border:1px solid #000 ;
+            padding: 5px 10px;
+            text-align: center;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        input{
+            width: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //创建DOM元素的方法
+        let c= (tag) =>{return document.createElement(tag);}
+        
+        let data = [
+                    {name:'XiaoMi',
+                    price:2999,
+                    img:'https://img12.360buyimg.com/n7/jfs/t1/156126/22/6258/119030/600293b8E0a5d0444/b3108123a305971d.jpg',
+                    count:1},
+                    {name:'HUAWEI',
+                    price:3999,
+                    img:'https://img11.360buyimg.com/n7/jfs/t1/135072/11/13143/156945/5f917eb9E223e291b/5676e3f9034b6211.jpg',
+                    count:2},
+                    {name:'Apple',
+                    price:5999,
+                    img:'https://img12.360buyimg.com/n7/jfs/t1/122505/19/15070/68848/5f861494Ebe330db5/24bc162f493ec940.jpg',
+                    count:3}]
+       
+        let head_data = ['商品名称','图片','价格','数量','小计','操作','选择'];
+        let table = c('table');
+        let tr = c('tr');
+        head_data.forEach(item=>{
+            let th = c('th'); 
+            th.innerHTML = item;
+            tr.appendChild(th);
+            table.appendChild(tr);
+               
+        })
+        let th_x = c('input');
+               
+        data.forEach(r=>{
+            //名称
+            let tr = c('tr');
+            let td1 = c('td');
+
+            td1.innerHTML = r.name;
+            //图片
+            let td2 = c('td');
+            let img = c('img');
+            img.src = r.img;
+            td2.appendChild(img);
+            //价格
+            let td3 = c('td');
+            td3.innerHTML = r.price;
+            //数量 input前后的两个button
+            let td4 = c('td');
+            let btn_sub = c('button');
+            btn_sub.innerHTML ='-';
+            btn_sub.onclick = () =>{
+                r.count--;
+                if(r.count<0) r.count = 0;
+                input.value = r.count;
+                td5.innerHTML = r.count * r.price;
+                div.innerHTML = `总价:${sum_all()}`;
+            }
+            td4.appendChild(btn_sub);
+            let input = c('input');
+            input.value = r.count;
+            //oninput事件文本框内容改变后实现
+            input.oninput = function(){
+                // console.log(this.value);
+                r.count = parseInt(this.value);
+                td5.innerHTML = r.count * r.price;
+                div.innerHTML = `总价:${sum_all()}`;
+            }
+            td4.appendChild(input);
+            let btn_add = c('button');
+            btn_add.innerHTML ='+';
+            btn_add.onclick = () =>{
+                r.count ++;
+                input.value = r.count;
+                td5.innerHTML = r.count * r.price;
+                div.innerHTML = `总价:${sum_all()}`;
+
+            }
+            td4.appendChild(btn_add);
+            //每一类价格小计
+            let td5 = c('td');
+            td5.innerHTML = r.count * r.price;
+            //删除操作
+            let td6 = c('td');
+            td6.innerHTML = 'Delete';
+            td6.onclick = function(){
+                let index = data.findIndex((r) => {r.name===td1.innerHTML});
+                data.splice(index,1);
+                tr.remove();
+                div.innerHTML = `总价:${sum_all()}`;
+
+            }
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4); 
+            tr.appendChild(td5);
+            tr.appendChild(td6);
+            table.appendChild(tr);
+
+        })
+
+        document.body.appendChild(table);
+        
+        //计算总价的方法
+        let sum_all =()=>{
+            let sum = 0;
+            data.forEach(element => {
+                sum += element.price * element.count;
+            });
+            return sum;
+        }
+        let div = c('div');
+        div.innerHTML = `总价:${sum_all()}`;
+        div.style.marginLeft= '700px';
+        document.body.appendChild(div);
+        console.log(sum_all());
+
+        
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button id="get">请求get</button>
+    <button id="post">请求post</button>
+    <script>
+        $('#get').click(function(){
+            //get
+            $.get('http://www.bingjs.com:81/Subject/GetAll', //第一参数地址
+            {gradeId:1},  //第二个参数 需要的数据
+            function(res){  //第三个参数 接受成功后执行的函数
+                console.log(res);
+            })
+        })
+        $('#post').click(function(){
+            //post
+            $.post('http://www.bingjs.com:81/Subject/Add',//第一参数地址
+            {
+                subjectName:'english', //第二个参数 需要post的数据
+                classHover:'100',
+                gradeId:1
+            },
+            function(res){    //第三个参数 接受成功后执行的函数0
+                console.log(res);
+            })
+        })
+        function get(url,data,callback){
+            let xhr = new XMLHttpRequest()
+            xhr.open()
+            xhr.send()
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4 ){
+                    if(xhr.status === 200){
+                        callback(xhr.response)
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

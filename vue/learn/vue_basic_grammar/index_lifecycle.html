@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue -lifecycle</title>
+</head>
+
+<body>
+    <div id="app">
+        {{name}}
+        <input type="text" v-model="name">
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script>
+        // Vue.config.devtools = false;//屏蔽devtools
+        Vue.config.devtools = true;
+        Vue.config.productionTip = false
+        // 创建vue对象
+        // vue lifecycle
+        let app = new Vue({
+            
+            // el:"#app",
+            //if do'nt has el need to use $mout("#app") to render
+            // if has template render template else el as template render
+            // template:"<h1>{{name}}</h1>",
+            data: {
+                name:"Alen"
+            },
+            // 
+            beforeCreate() {
+                console.log("beforeCreate  "+this.$el,this.name);
+            },
+            created() {
+                console.log("created  " + this.$el, this.name);
+            },
+           beforeMount() {
+                console.log("beforeMount  " + this.$el, this.name);
+           },
+           mounted() {
+                console.log("mounted  " + this.$el, this.name);
+           },
+           beforeUpdate() {
+                console.log("beforeUpdate  " + this.$el, this.name);
+                
+           },
+           updated() {
+                console.log("updated " + this.$el, this.name);
+                
+           },
+           beforeDestroy() {
+                console.log("beforeDestroy " + this.$el, this.name);
+                
+           },
+           destroyed() {
+                console.log("destroyed " + this.$el, this.name);
+                
+           },
+        })
+        // if Vue obj do'nt has el
+        // can render by new FeatureComponent().$mount('#app');
+        setTimeout(()=>{
+            // 手动mount
+            app.$mount('#app');
+        },2000)
+
+        setTimeout(() => {
+            // 手动destroy 整个组建会消失
+                app.$destroy();
+            }, 5000)
+        
+    </script>
+
+</body>
+
+</html>

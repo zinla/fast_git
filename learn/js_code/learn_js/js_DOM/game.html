@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        div {
+            height: 30px;
+            width: 30px;
+            background-color: aqua;
+            /* position: absolute; */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // window.onclick =function(){
+        //     // e.pageX 是点 x轴
+        //     // e.pageY 是点 Y轴
+
+        //     console.log(e);
+        // }
+        //return random color
+        function create_color(){
+            let str = '0123456789ABCDEF';
+            let res = '#';
+            for(let i=0;i<6;i++){
+                res += str[Math.floor(Math.random()*16)];
+            }
+            return res;
+        }
+
+
+
+        let max_left = window.innerWidth - 30;
+        let max_top = window.innerHeight - 30;
+        setInterval(() =>{
+            let div = document.createElement('div');
+
+            div.style.left = Math.random()*max_left + 'px'
+            div.style.top = Math.random()*max_top + 'px'
+
+            div.style.backgroundColor = create_color();
+            div.onclick = function(){
+                div.remove();
+            }
+            document.body.appendChild(div);
+        },3);
+    </script>
+</body>
+</html>

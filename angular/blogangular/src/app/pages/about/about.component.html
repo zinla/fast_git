@@ -1,0 +1,83 @@
+<div class="card-div">
+  <div
+    style="
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 2rem;
+      margin: 0 0 4rem;
+    "
+    id="car-grid"
+  >
+    <app-card *ngFor="let item of data" [parent_data]="item"></app-card>
+    <div style="text-align: left">
+      <h1>About</h1>
+      <h3>English Name: Alen Andry</h3>
+      <h3>Frontend && GUI && Software Developer</h3>
+      <div>
+        <article class="post-wrap page">
+          <section class="post-content">
+            <h1 id="Summary">
+              <a href="#Summary" class="headerlink" title="Summary"></a>Summary
+            </h1>
+            <h3>
+              I'm a senior, and now I'm looking for a job, I am also a Frontend
+              developer,I have strong knowledge of Rust, JavaScript,Java and
+              network programming, and goot at applying these skills to works. I
+              love open source and are keen to contribute to it.
+            </h3>
+            <h3>
+              Not only that, but I also like travel, cooking and video games. I
+              am willing to try new things, and keeping to learn from them.
+            </h3>
+            <h1 id="Experience">
+              <a href="#Experience" class="headerlink" title="Experience"></a
+              >Experience
+            </h1>
+            <a>
+              Dim target detection tool [python development] 2020.10-2020.12</a
+            >
+            <h3>
+              The software we developed in this project can detect weak targets,
+              detect what the targets are in satellite images, and classify the
+              targets. I am responsible for data tagging in the team, developing
+              Windows system GUI with QT and Web front end with Vue.
+            </h3>
+            <a>
+              Video object recognition tool [Front-end development]
+              2019.09-2020.08</a
+            >
+            <h3>
+              Based on YOLOv5 to achieve video target recognition and
+              development GUI, in the video can detect what the target is, the
+              target classification, I am responsible for the development of the
+              team project GUI development. With Qt5 development project GUI.
+            </h3>
+            <h2>Internship experience</h2>
+            <a>
+              Lenovo Group Beijing Software Development Internship
+              2021.05.21-2021.09.30
+            </a>
+            <h3>
+              In the team, I was responsible for developing the application of
+              gesture control computer with Rust, the development of Springboot
+              backend, the development of webservice based on Flask framework,
+              the use of MySQl to communicate with database, the development of
+              script tools with python, the use of QT/Rust-Iced and the
+              development of GUI applications. Participated in and developed the
+              back-end of Lenovo Intelligent Office Conference System, the
+              back-end of parts recommendation system, the front-end of large
+              screen in laboratory, and the mouse control function of gesture
+              control application.
+            </h3>
+          </section>
+        </article>
+      </div>
+      <!-- <img
+        src="https://dnrops.gitee.io/blog/assets//images/me.png"
+        alt="alen_andry"
+      /> -->
+      <!-- <div>My Cool Girlfriend and Me</div> -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #lunbo{
+            display:flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="lunbo">
+        <img src="http://p1.music.126.net/iNd0fO8quNc9l5NGX1kD-A==/109951165649106161.jpg?imageView&quality=89" alt="">
+        
+    </div>
+    <script>
+        let i =0;
+        let imgs = ["http://p1.music.126.net/e3vt4Zx92y8EzTv9PFL-7A==/109951165647729440.jpg?imageView&quality=89",
+               "http://p1.music.126.net/iNd0fO8quNc9l5NGX1kD-A==/109951165649106161.jpg?imageView&quality=89",
+               "http://p1.music.126.net/4U2VRTZ3asPiRLMlQcKIlQ==/109951165647736924.jpg?imageView&quality=89",
+               "http://p1.music.126.net/k0BtpxWqLJWSL9hNi5kEEw==/109951165648907021.jpg?imageView&quality=89"]
+
+        let img = document.querySelector("#lunbo img");
+        let src = img.src;
+        console.log(src);
+        setInterval(() =>{
+            if(++i>imgs.length-1) i=0
+            img.src = imgs[i];
+        },1000);
+
+    </script>
+    
+</body>
+</html>

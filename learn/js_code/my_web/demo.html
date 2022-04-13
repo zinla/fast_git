@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            /* 整个弹窗组件 */
+            .component_popup {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 100;
+            }
+
+            /* 遮罩背景 */
+            .popup_mask {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.7);
+            }
+
+            /* 弹窗区域（内容 + close）：严格居中 */
+            .popup_content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            /* 弹窗的内容部分 */
+            .content_box {
+                width: 15.45rem;
+                height: 19.32rem;
+                background: url(http://img.smyhvae.com/20191010_1500_red-packet.png) no-repeat;
+                background-size: 15.45rem 19.32rem;
+            }
+
+            /* 弹窗的close图标 */
+            .content_close {
+                width: 1.25em;
+                height: 1.25em;
+                background: url(http://img.smyhvae.com/20191010_1500_close.png) no-repeat;
+                background-size: 1.25rem 1.25rem;
+                margin: 0 auto;
+                margin-top: 0.5rem;
+            }
+            .content{
+                overflow:hidden;
+	            text-overflow:ellipsis;
+	            display:-webkit-box;
+	            -webkit-box-orient:vertical;
+	            -webkit-line-clamp:2;
+                /* 只输出两行  shengxiade ... */
+            }
+
+
+
+            /*  */
+            .tip-img {
+        display: inline-block;
+        background: url("/home/alen/Pictures/10.jpg") no-repeat left center;
+        height: 32px;
+        position: relative;
+        width: 12px;
+   }
+ .tip-img .prompt-box {
+        background-color: #ccc;
+        width:120px;
+        position: absolute;
+        left: 14px;
+        top: 5px;
+        display: none;
+  }
+ .tip-img:hover {
+   background: url("/home/alen/Pictures/goo.jpg") no-repeat left center;
+  }
+ .tip-img:hover .prompt-box {
+     display: inline-block;
+  }
+            
+    </style>
+    </head>
+    <body>
+        <div class="content">默认文档流中的页面主体 Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus eum sequi ducimus numquam dolore minus ipsa quae magnam quas architecto inventore corrupti illo soluta nisi, saepe quam modi ipsum iste. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, assumenda aliquam. Cumque dignissimos voluptatum modi, eaque quo labore? Nihil nobis aliquam non minima, dolor fugit asperiores? Ipsum illum, distinctio nisi veniam totam minima recusandae iste culpa velit, unde natus dignissimos nihil dolores aliquam odio labore itaque dolore sequi autem praesentium alias. Veniam labore delectus autem, accusantium explicabo aspernatur numquam hic repellendus ab officia blanditiis tempore eaque mollitia quisquam sit! Veritatis perspiciatis amet nostrum? Magni quam adipisci, quasi beatae temporibus cupiditate deserunt laboriosam recusandae placeat laudantium quidem sequi illum molestiae excepturi. Delectus perferendis saepe iste ipsum id, odio asperiores nostrum labore!</div>
+
+        <div class="component_popup">
+            <div class="popup_mask"></div>
+            <div class="popup_content">
+                <div class="content_box"></div>
+                <div class="content_close"></div>
+            </div>
+        </div>
+        <div>
+            <span class="tip-img">
+            <span class="prompt-box">悬浮上来的内容</span>
+            </span>
+        </div>
+    </body>
+</html>

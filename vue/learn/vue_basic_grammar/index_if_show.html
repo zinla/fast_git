@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-if v-show</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-if 决定render nor not -->
+        <div v-if="show">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+        <!-- v-show 决定隐藏还是显示 -->
+        <div v-if="show">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+        <button @click="show=!show">show/hide</button>
+
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script>
+    Vue.config.productionTip = false;
+        new Vue({
+            el:"#app",
+            data:{
+                show:false,
+            }
+        })
+    </script>
+    
+</body>
+</html>

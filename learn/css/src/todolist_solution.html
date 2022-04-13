@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<!-- 请记住，针对相同元素，你可以使用多个 CSS 类，但仅限 1 个 id。 -->
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>练习：使用属性</title>
+	<style>
+        body {
+            font-family: Arial; 
+        }
+        #to-do-list {
+            width: 400px;
+            background: #2e3d49;
+            padding: 10px 20px;
+        }
+        .title {
+            color: #fff;
+        }
+        .underline {
+            text-decoration: underline;
+        } 
+        .list {
+            list-style-type: circle;
+            text-align: left;
+            font-size: 16px;
+            color: #1fba58;
+            line-height: 24px;
+        }
+        .finished {
+            color: #f4442f;
+            text-decoration: line-through;
+        }
+	</style>
+</head>
+<body>
+	<div id="to-do-list">
+		<h1 class="title">我的待办事项列表</h1>
+		<h2 class="title underline">家务</h2>
+		<ul class="list">
+			<li>把碗碟放进洗碗机</li>
+			<li>用吸尘器打扫起居室</li>
+			<li>倒垃圾</li>
+			<li class="finished">清扫车库</li>
+		</ul>
+		<h2 class="title underline">家庭作业</h2>
+		<ul class="list">
+			<li class="finished">针对科学项目开动脑筋</li>
+			<li class="finished">解决 2 个微积分的问题</li>
+			<li>学习以准备编程期中考试 :P</li>
+            <li>完成优达学城前端开发（入门）的项目 0</li>
+			<li class="finished">查找生物学研究报告的来源</li>
+			<li>阅读《战争的艺术》的前两章</li>
+		</ul>
+        <h2 class="title underline">开派对</h2>
+        <ul class="list">
+            <li class="finished">发出邀请</li>
+            <li>在酒店预订派对房间</li>
+            <li>订购蛋糕！</li>
+        </ul>
+	</div>
+</body>
+</html>

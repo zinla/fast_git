@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+</head>
+<body>
+    <script>
+        let search = location.search;  //?a=1&b=2
+        let arr = search.replace("?","").split("&");  //["a=1", "b=2"]
+
+        arr = arr.map(r=>r.split("="))   // [Array(2), Array(2)]  ["a", "1"] ["b", "2"]
+
+        let obj = {};
+        arr.forEach(r=>obj[r[0]]=r[1]);
+        console.log(obj);
+
+
+    </script>
+</body>
+</html>

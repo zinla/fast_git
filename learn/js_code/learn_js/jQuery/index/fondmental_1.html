@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Web</title>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <style>
+        body{
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            line-height: 1.5em;
+        }
+        header{
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+        .container{
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Michelle Web</h1>
+    </header>
+    <main>
+        <div id="container">
+            <h1 id="heading1">Lorem ipsum dolor sit amet.</h1>
+            <p id="pra1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis blanditiis assumenda voluptatibus reprehenderit quia neque sapiente, <span>Lorem ipsum dolor sit amet.</span> repudiandae repellat nesciunt ut corporis aliquid, fuga iure labore, nam impedit enim maiores quaerat.</p>
+            <h1 class="heading1">Lorem ipsum dolor sit amet.</h1>
+            <p class="pra1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere earum itaque necessitatibus dolores accusamus ratione animi, veritatis nesciunt, <span>Lorem ipsum dolor sit amet.</span> nisi tenetur quisquam. Ipsa quos, ab unde maxime magnam ipsam deleniti reiciendis.</p>
+
+            <ul id="list">
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+            </ul>
+
+            <input type="button" value="Button 1">
+            <input type="submit" value="Button 1">
+            <input type="text">
+
+
+            <a href="www.googole.com">google</a>
+            <a href="www.baidu.com">baidu</a>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        // $('h1').hide();  //select <h1> tag
+        // $('h1#heading1').hide();   //select <h1> and id="heading1"
+        // $('h1.heading1').hide();    //select <h1> and class="heading1"
+            $('p span').css('color','red');
+            $('ul#list li:first').css('color','blue');
+            $('ul#list li:last').css('color','green');
+            $('ul#list li:even').css('background-color','yellow');
+            $('ul#list li:odd').css('background-color','#cccccc'); 
+            $('ul#list li:nth-child(3n)').css('font-size','2rem');  //select 3th 6th
+
+            $(':button').hide();
+            $('[href]').css('color','red');
+            $('a[href="www.baidu.com"]').css('color','yellow');
+
+            // $('*').hide();  //every thing will be hide.
+
+
+
+    </script>
+</body>
+</html>

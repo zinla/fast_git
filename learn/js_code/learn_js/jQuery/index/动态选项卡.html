@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><span></span><input type="text"><button class="up">上</button><button class="down">下</button><button class="del">删</button></li>
+            <li><span></span><input type="text"><button class="up">上</button><button class="down">下</button><button class="del">删</button></li>
+            <li><span></span><input type="text"><button class="up">上</button><button class="down">下</button><button class="del">删</button></li>
+            <li><span></span><input type="text"><button class="up">上</button><button class="down">下</button><button class="del">删</button></li>
+            <li><span></span><input type="text"><button class="up">上</button><button class="down">下</button><button class="del">删</button></li>
+
+        </ul>
+        <button class="add">add data</button>
+    </div>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <script>
+        //删除
+        $('ul').on('click','.del',function(){
+            $(this).parent('li').remove();
+            sort();
+        })
+        //上移
+        $('ul').on('click','.up',function(){
+            let change_li1 = $(this).parent('li')
+            let change_li2 = $(this).parent('li').prev()
+            change_li2.before(change_li1);
+            sort();
+        })
+        //下移
+        $('ul').on('click','.down',function(){
+            let change_li1 = $(this).parent('li')
+            let change_li2 = $(this).parent('li').next();
+            change_li2.after(change_li1);
+            sort();
+        })
+        
+        //添加数据
+        $('.add').click(function(){
+           let span  = $('<span/>').text('E.');
+           let  input = $('<input/>');
+           let  li = $('<li/>');
+           let  btn1 = $('<button class="up"/>').text('上');
+           let  btn2 = $('<button class="down"/>').text('下');
+           let  btn3 = $('<button class="del"/>').text('删');
+           li.append(span);
+           li.append(input);
+           li.append(btn1);
+           li.append(btn2);
+           li.append(btn3);
+           $('ul').append(li);
+           sort();
+        })
+        //排序
+        let str = 'ABCDEFGHIJKLNMOPQRSTUVWXYZ';
+        function sort(){
+        $('ul>li').each(function(index,li){
+            $(li).find('span').text(str[index]+'.')
+            //第一个 上禁用
+            if(index === 0){
+                $(li).find('button:eq(0)').prop('disabled',true);
+            }
+            else{
+                $(li).find('button:eq(0)').prop('disabled',false);
+
+            }
+        
+            //最后一个 下禁用
+            
+            if(index === $('ul>li').length-1){
+                $(li).find('button:eq(1)').prop('disabled',true);
+            }else{
+                $(li).find('button:eq(1)').prop('disabled',false);
+
+            }
+
+        })
+    }
+    sort()
+    </script>
+</body>
+</html>

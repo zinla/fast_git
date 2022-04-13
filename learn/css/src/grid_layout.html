@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.font.im/css?family=Open+Sans" rel="stylesheet">
+    <!-- <link href="https://fonts.font.im/css?family=Modern+Antiqua" rel="stylesheet"> -->
+
+    <style>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}
+.grid > div {
+  background-image: url(../img/sea.svg);
+  background-size: cover;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight:bold;
+  color: rgb(17, 17, 7);
+  transition: all 0.5s ease-in;
+}
+.grid div:nth-of-type(1){
+  grid-column: 1/4;
+}
+.grid div:nth-of-type(4){
+  grid-column: 1/4;
+}
+.grid div:nth-of-type(7){
+  grid-column: 1/4;
+
+}
+.grid div:nth-of-type(8){
+  grid-column: 4/6
+
+}
+.grid div:nth-of-type(9){  /*第九个div*/
+  color: blue;
+  grid-column:1/6;
+}
+.grid div:nth-of-type(10){  /*第九个div*/
+  /* color: blue; */
+  grid-column:3/4;
+}
+.grid > div:hover {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+body {
+  margin: 2rem;
+  font: 12px system-ui;
+}  
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae temporibus, laborum magnam harum minus possimus esse doloremque unde est iusto accusantium animi reprehenderit debitis ea dolore cum provident, at nobis. Fugit omnis nostrum temporibus reprehenderit et distinctio voluptate, ullam rem illo aliquid corrupti est repellat debitis perferendis amet ratione cupiditate quibusdam consectetur provident beatae ipsam? Eaque aspernatur animi doloribus distinctio cum eum pariatur earum, sapiente, magnam similique inventore sint totam illum! Modi labore, suscipit praesentium placeat fugiat blanditiis impedit facilis, aliquid, nobis quod quam? Sunt nisi blanditiis quidem, ipsum dignissimos optio illo? Perspiciatis quibusdam ullam ex tempora quas. Debitis, minus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae temporibus, laborum magnam harum minus possimus esse doloremque unde est iusto accusantium animi reprehenderit debitis ea dolore cum provident, at nobis. Fugit omnis nostrum temporibus reprehenderit et distinctio voluptate, ullam rem illo aliquid corrupti est repellat debitis perferendis amet ratione cupiditate quibusdam consectetur provident beatae ipsam? Eaque aspernatur animi doloribus distinctio cum eum pariatur earum, sapiente, magnam similique inventore sint totam illum! Modi labore, suscipit praesentium placeat fugiat blanditiis impedit facilis, aliquid, nobis quod quam? Sunt nisi blanditiis quidem, ipsum dignissimos optio illo? Perspiciatis quibusdam ullam ex tempora quas. Debitis, minus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae temporibus, laborum magnam harum minus possimus esse doloremque unde est iusto accusantium animi reprehenderit debitis ea dolore cum provident, at nobis. Fugit omnis nostrum temporibus reprehenderit et distinctio voluptate, ullam rem illo aliquid corrupti est repellat debitis perferendis amet ratione cupiditate quibusdam consectetur provident beatae ipsam? Eaque aspernatur animi doloribus distinctio cum eum pariatur earum, sapiente, magnam similique inventore sint totam illum! Modi labore, suscipit praesentium placeat fugiat blanditiis impedit facilis, aliquid, nobis quod quam? Sunt nisi blanditiis quidem, ipsum dignissimos optio illo? Perspiciatis quibusdam ullam ex tempora quas. Debitis, minus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae temporibus, laborum magnam harum minus possimus esse doloremque unde est iusto accusantium animi reprehenderit debitis ea dolore cum provident, at nobis. Fugit omnis nostrum temporibus reprehenderit et distinctio voluptate, ullam rem illo aliquid corrupti est repellat debitis perferendis amet ratione cupiditate quibusdam consectetur provident beatae ipsam? Eaque aspernatur animi doloribus distinctio cum eum pariatur earum, sapiente, magnam similique inventore sint totam illum! Modi labore, suscipit praesentium placeat fugiat blanditiis impedit facilis, aliquid, nobis quod quam? Sunt nisi blanditiis quidem, ipsum dignissimos optio illo? Perspiciatis quibusdam ullam ex tempora quas. Debitis, minus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae temporibus, laborum magnam harum minus possimus esse doloremque unde est iusto accusantium animi reprehenderit debitis ea dolore cum provident, at nobis. Fugit omnis nostrum temporibus reprehenderit et distinctio voluptate, ullam rem illo aliquid corrupti est repellat debitis perferendis amet ratione cupiditate quibusdam consectetur provident beatae ipsam? Eaque aspernatur animi doloribus distinctio cum eum pariatur earum, sapiente, magnam similique inventore sint totam illum! Modi labore, suscipit praesentium placeat fugiat blanditiis impedit facilis, aliquid, nobis quod quam? Sunt nisi blanditiis quidem, ipsum dignissimos optio illo? Perspiciatis quibusdam ullam ex tempora quas. Debitis, minus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae temporibus, laborum magnam harum minus possimus esse doloremque unde est iusto accusantium animi reprehenderit debitis ea dolore cum provident, at nobis. Fugit omnis nostrum temporibus reprehenderit et distinctio voluptate, ullam rem illo aliquid corrupti est repellat debitis perferendis amet ratione cupiditate quibusdam consectetur provident beatae ipsam? Eaque aspernatur animi doloribus distinctio cum eum pariatur earum, sapiente, magnam similique inventore sint totam illum! Modi labore, suscipit praesentium placeat fugiat blanditiis impedit facilis, aliquid, nobis quod quam? Sunt nisi blanditiis quidem, ipsum dignissimos optio illo? Perspiciatis quibusdam ullam ex tempora quas. Debitis, minus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae temporibus, laborum magnam harum minus possimus esse doloremque unde est iusto accusantium animi reprehenderit debitis ea dolore cum provident, at nobis. Fugit omnis nostrum temporibus reprehenderit et distinctio voluptate, ullam rem illo aliquid corrupti est repellat debitis perferendis amet ratione cupiditate quibusdam consectetur provident beatae ipsam? Eaque aspernatur animi doloribus distinctio cum eum pariatur earum, sapiente, magnam similique inventore sint totam illum! Modi labore, suscipit praesentium placeat fugiat blanditiis impedit facilis, aliquid, nobis quod quam? Sunt nisi blanditiis quidem, ipsum dignissimos optio illo? Perspiciatis quibusdam ullam ex tempora quas. Debitis, minus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae temporibus, laborum magnam harum minus possimus esse doloremque unde est iusto accusantium animi reprehenderit debitis ea dolore cum provident, at nobis. Fugit omnis nostrum temporibus reprehenderit et distinctio voluptate, ullam rem illo aliquid corrupti est repellat debitis perferendis amet ratione cupiditate quibusdam consectetur provident beatae ipsam? Eaque aspernatur animi doloribus distinctio cum eum pariatur earum, sapiente, magnam similique inventore sint totam illum! Modi labore, suscipit praesentium placeat fugiat blanditiis impedit facilis, aliquid, nobis quod quam? Sunt nisi blanditiis quidem, ipsum dignissimos optio illo? Perspiciatis quibusdam ullam ex tempora quas. Debitis, minus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae temporibus, laborum magnam harum minus possimus esse doloremque unde est iusto accusantium animi reprehenderit debitis ea dolore cum provident, at nobis. Fugit omnis nostrum temporibus reprehenderit et distinctio voluptate, ullam rem illo aliquid corrupti est repellat debitis perferendis amet ratione cupiditate quibusdam consectetur provident beatae ipsam? Eaque aspernatur animi doloribus distinctio cum eum pariatur earum, sapiente, magnam similique inventore sint totam illum! Modi labore, suscipit praesentium placeat fugiat blanditiis impedit facilis, aliquid, nobis quod quam? Sunt nisi blanditiis quidem, ipsum dignissimos optio illo? Perspiciatis quibusdam ullam ex tempora quas. Debitis, minus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae temporibus, laborum magnam harum minus possimus esse doloremque unde est iusto accusantium animi reprehenderit debitis ea dolore cum provident, at nobis. Fugit omnis nostrum temporibus reprehenderit et distinctio voluptate, ullam rem illo aliquid corrupti est repellat debitis perferendis amet ratione cupiditate quibusdam consectetur provident beatae ipsam? Eaque aspernatur animi doloribus distinctio cum eum pariatur earum, sapiente, magnam similique inventore sint totam illum! Modi labore, suscipit praesentium placeat fugiat blanditiis impedit facilis, aliquid, nobis quod quam? Sunt nisi blanditiis quidem, ipsum dignissimos optio illo? Perspiciatis quibusdam ullam ex tempora quas. Debitis, minus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse aliquid laboriosam minima ex praesentium recusandae reprehenderit unde sit tempore atque aut commodi quae expedita corrupti, dignissimos architecto. Eius, maiores ad?</div>  
+            
+        
+    </div>
+    
+</body>
+</html>

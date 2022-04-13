@@ -1,0 +1,20 @@
+<div class="episode-card">
+  <div class="num">
+    {{ data.num }}
+  </div>
+
+  <div class="episode-date-and-title">
+    <time datetime="2021-09-27" pubdate="">
+      {{ data.date }}
+    </time>
+
+    <h3>
+      <a href="./{{ data.num }}">
+        {{ data.title }}
+      </a>
+    </h3>
+    <div>
+      {{ data.content }}
+    </div>
+  </div>
+</div>

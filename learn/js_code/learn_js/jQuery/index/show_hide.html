@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            display: none;
+            
+        }
+    </style>
+</head>
+<body>
+    <button id="show">show</button>
+    <button id="hide">hide</button>
+    <button id="show_hide">show/hide</button>
+    <button id="slip_down">slip_down</button>
+    <button id="slip_up">slip_up</button>
+    <button id="up_down">slip_down/slip_up</button>
+    <button id="up_down">slip_down/slip_up</button>
+    <button id="in">fade in</button>
+    <button id="out">fade out</button>
+    <button id="in_out">fade in/fade out</button>
+
+
+
+    <div id="box"></div>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script>
+        //点击显示
+        //对style.display进行设置
+        $('#show').click(function(){
+            // $('#box').show() //立刻显示
+            // $('#box').show('fast') //快速显示
+            // $('#box').show('slow') //慢速显示
+            // $('#box').show('normal') //正常速度显示
+            // $('#box').show(2000) //2000毫秒后显示
+            $('#box').show(2000,function(){console.log('show finished');}) //2000毫秒后 显示完成后 执行函数
+
+        })
+        // 点击隐藏
+        $('#hide').click(function(){
+            // $('#box').hide() //立刻隐藏
+            // $('#box').hide('fast') //快速隐藏
+            // $('#box').hide('slow') //慢速隐藏
+            // $('#box').hide('normal') //正常速度隐藏
+            // $('#box').hide(2000) //2000毫秒后隐藏
+            $('#box').hide(2000,function(){console.log('hide finished');}) //2000毫秒后 隐藏完成后 执行函数
+
+        })
+        点击显示再点击隐藏 solution1.0
+        $("#show_hide").click(function(){
+            if($('#box').css('display') === 'none'){
+                $("#box").show()
+            }
+            else{
+                $("#box").hide()
+            }
+        })
+        //点击显示再点击隐藏 solution1.1
+        // $("#show_hide").click(function(){
+        //     $("#box").toggle();
+        //     // $("#box").toggle(5000); //自动显示隐藏   总耗时5000毫秒
+        // })
+        //点击下拉显示
+        $("#slip_down").click(function(){
+            $('#box').slideDown()
+        })
+        //点击上拉隐藏
+        $("#slip_up").click(function(){
+            $('#box').slideUp()
+        })
+        //点击下拉显示 再点击上拉隐藏
+        $("#up_down").click(function(){
+            $('#box').slideToggle()
+        })
+        //淡入显示
+        $("#in").click(function(){
+            $('#box').fadeIn(1000)
+        })
+        //淡出隐藏
+        $("#out").click(function(){
+            $('#box').fadeOut(1000)
+        })
+        //点击淡入显示 再点击淡出隐藏
+        $("#in_out").click(function(){
+            $('#box').fadeToggle()
+        })
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+/**
+*
+* -----------------------------------------------------------------------------
+*
+* Author : rs-theme
+* Author URI : http://www.rstheme.com/
+*
+* -----------------------------------------------------------------------------
+*
+**/
+
+.animate1 {
+    animation: animate1 2s both;
+    -webkit-animation: animate1 2s both;
+    -moz-animation: animate1 2s both;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+}
+@keyframes animate1 {
+    from {
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, -30px, 0);
+        -webkit-transform: translate3d(0, -30px, 0);
+        -moz-transform: translate3d(0, -30px, 0);
+    }
+}
+.animate2 {
+    animation: animate2 2s both;
+    -webkit-animation: animate2 2s both;
+    -moz-animation: animate2 2s both;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+}
+@keyframes animate2 {
+    from {
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(30px, 0, 0);
+        -webkit-transform: translate3d(30px, 0, 0);
+        -moz-transform: translate3d(30px, 0, 0);
+    }
+}
+.animate3 {
+    animation: animate3 1.30s both;
+    -webkit-animation: animate3 1.30s both;
+    -moz-animation: animate3 1.30s both;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+}
+@keyframes animate3 {
+    from {
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-30px, -50px, 0);
+        -webkit-transform: translate3d(-30px, -50px, 0);
+        -moz-transform: translate3d(-30px, -50px, 0);
+    }
+}
+.animate4 {
+    animation: animate4 1.30s both;
+    -webkit-animation: animate4 1.30s both;
+    -moz-animation: animate4 1.30s both;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+}
+@keyframes animate4 {
+    from {
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(30px, 50px, 0);
+        -webkit-transform: translate3d(30px, 50px, 0);
+        -moz-transform: translate3d(30px, 50px, 0);
+    }
+}
+.animate5 {
+    animation: animate5 1.30s both;
+    -webkit-animation: animate5 1.30s both;
+    -moz-animation: animate5 1.30s both;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+}
+@keyframes animate5 {
+    from {
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-50px, 0, 0);
+        -webkit-transform: translate3d(-50px, 0, 0);
+        -moz-transform: translate3d(-50px, 0, 0);
+    }
+}
+.animate6 {
+    animation: animate6 1.30s both;
+    -webkit-animation: animate6 1.30s both;
+    -moz-animation: animate6 1.30s both;
+    animation-direction: alternate;
+    -webkit-animation-direction: alternate;
+    -moz-animation-direction: alternate;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+}
+@keyframes animate6 {
+    from {
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(100px, 0, 0);
+        -webkit-transform: translate3d(100px, 0, 0);
+        -moz-transform: translate3d(100px, 0, 0);
+    }
+}
+/*Pulse Border Animation*/
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/*--------------------------------------------
+    Animation Rsponsive Css (max-width: 991)
+--------------------------------------------*/
+@media only screen and (max-width: 991px) {
+    @keyframes animate3 {
+        to {
+            transform: translate3d(-15px, -25px, 0);
+            -webkit-transform: translate3d(-15px, -25px, 0);
+            -moz-transform: translate3d(-15px, -25px, 0);
+        }
+    }
+    @keyframes animate4 {
+        to {
+            transform: translate3d(15px, 25px, 0);
+            -webkit-transform: translate3d(15px, 25px, 0);
+            -moz-transform: translate3d(15px, 25px, 0);
+        }
+    }
+    @keyframes animate5 {
+        to {
+            transform: translate3d(-30px, 0, 0);
+            -webkit-transform: translate3d(-30px, 0, 0);
+            -moz-transform: translate3d(-30px, 0, 0);
+        }
+    }
+    @keyframes animate6 {
+        to {
+            transform: translate3d(50px, 0, 0);
+            -webkit-transform: translate3d(50px, 0, 0);
+            -moz-transform: translate3d(50px, 0, 0);
+        }
+    }
+}

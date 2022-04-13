@@ -1,0 +1,105 @@
+<div class="card-div" style="margin-top: 8rem">
+  <div
+    style="
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 2rem;
+      margin: 0 0 4rem;
+    "
+    id="car-grid"
+  >
+    <div style="text-align: center">
+      <h1>Login</h1>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          height: 100px;
+        "
+      >
+        <label for="username" style="font-size: 20px; width: 78px">ID</label>
+        <input
+          type="search"
+          style="
+            background: #ff894e;
+            border: ivory;
+            border-radius: 15px;
+            margin: 1px 0 1px 1px;
+            padding: 0 10px 0 10px;
+            max-height: none;
+            width: 250px;
+            height: 45%;
+            outline: none;
+            box-sizing: border-box;
+            vertical-align: top;
+            color: rgb(0 0 0);
+          "
+          name="username"
+          [(ngModel)]="id"
+          required
+        />
+      </div>
+
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          height: 100px;
+        "
+      >
+        <label for="username" style="font-size: 20px; width: 78px"
+          >Password</label
+        >
+        <input
+          type="password"
+          style="
+            background: #ff894e;
+            border: ivory;
+            border-radius: 15px;
+            margin: 1px 0 1px 1px;
+            padding: 0 10px 0 10px;
+            max-height: none;
+            width: 250px;
+            height: 45%;
+            outline: none;
+            box-sizing: border-box;
+            vertical-align: top;
+            color: rgb(0 0 0);
+          "
+          name="username"
+          [(ngModel)]="password"
+          required
+        />
+      </div>
+      <div style="gap: 1rem; height: 100px" class="btn">
+        <button
+          class="login_btn"
+          style="
+            border: none;
+            background-color: #ff894e;
+            width: 100px;
+            height: 45px;
+            border-radius: 15px;
+            font-size: 1rem;
+            color: rgb(0, 0, 0);
+          "
+          (click)="route_login()"
+        >
+          Login
+        </button>
+      </div>
+      <div>
+        <!-- <video width="100%" height="100%" controls="controls" autoplay="autoplay" webkit-playsinline="" x-webkit-airplay="">
+          <source
+            src="{{video_src}}"
+            type="video/mp4">
+        </video> -->
+
+    </div>
+  </div>
+</div>

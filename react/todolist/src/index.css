@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+html::-webkit-scrollbar-thumb {
+  background: #46df31;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%),
+    inset -2px -2px 2px rgb(0 0 0 / 25%);
+}
+html::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #ce0e0e, #434343 1px, #111 0, #111);
+}
+:-webkit-scrollbar-thumb {
+  background: #7036bd;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%),
+    inset -2px -2px 2px rgb(0 0 0 / 25%);
+}
+html::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #434343, #434343 1px, #111 0, #111);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.App {
+  width: 80vmin;
+  height: 80vmin;
+  border: 1px solid #ccc;
+  overflow-y: scroll;
+}
+.App::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+.App::-webkit-scrollbar-thumb {
+  background: #46df31;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%),
+    inset -2px -2px 2px rgb(0 0 0 / 25%);
+}
+.App::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #ce0e0e, #434343 1px, #111 0, #111);
+}
+:-webkit-scrollbar-thumb {
+  background: #7036bd;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%),
+    inset -2px -2px 2px rgb(0 0 0 / 25%);
+}
+.App::-webkit-scrollbar-track {
+  background: linear-gradient(90deg, #434343, #434343 1px, #111 0, #111);
+}
+
+.container {
+  width: 80vw;
+  height: 60vh;
+  border: 1px solid #ccc;
+  margin: auto;
+  margin-top: 100px;
+}
+.task {
+  background: #f4f4f4;
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.task h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.task p {
+  text-align: start;
+}
+.task.reminder {
+  border-left: 5px solid #014462;
+}
+.title {
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.footer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.add-form {
+  display: grid;
+  grid-template-rows: repeat(1fr, 5);
+  justify-content: start;
+  align-items: center;
+}

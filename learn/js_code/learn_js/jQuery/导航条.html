@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #nav{
+            margin: 50px 0;
+            width: 100vw;
+           display: grid;
+           grid-template-columns: repeat(5,1fr);
+           grid-gap: 1rem;
+           
+        }
+        #nav li{
+            text-align: center;
+        }
+        #nav li:hover{
+            background-color: lightpink;
+            border-radius: 1em;
+
+        }
+        #nav li:active{
+            background-color: blue;
+        }
+    </style>
+
+</head>
+<body>
+    <ul id="nav">
+        <li>Web</li>
+        <li>java</li>
+        <li>python</li>
+        <li>develop</li>
+        <li>kotlin</li>
+    </ul>
+    
+</body>
+</html>

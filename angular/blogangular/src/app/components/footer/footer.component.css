@@ -1,0 +1,28 @@
+.site-footer {
+  margin: 3rem 2rem;
+  text-align: center;
+}
+.site-footer a {
+  margin: 0 1rem;
+  color: #000000b3;
+  text-decoration: none;
+  font-weight: bold;
+}
+.site-footer p {
+  margin: 0 auto 1rem;
+}
+.apply-typography {
+  padding-bottom: 50px;
+}
+.apply-typography dd,
+.apply-typography li,
+.apply-typography p {
+  max-width: 650px;
+}
+.apply-typography dl,
+.apply-typography ol,
+.apply-typography p,
+.apply-typography pre,
+.apply-typography ul {
+  margin: 0 0 1 rem;
+}

@@ -1,0 +1,38 @@
+.py {
+    color: blue;
+}
+video {
+    clear: both;
+    display: block;
+  }
+  button {
+    z-index: 1000;
+    position: relative;
+  }
+  .webcam {
+    position: relative;
+  }
+  .webcam {
+    position: relative;
+    float: left;
+    width: 80%;
+    margin: 2% 1%;
+    cursor: pointer;
+  }
+  
+  .webcam p {
+    position: absolute;
+    padding: 5px;
+    background-color: rgba(255, 111, 0, 0.85);
+    color: #FFF;
+    border: 1px dashed rgba(255, 255, 255, 0.7);
+    z-index: 2;
+    font-size: 12px;
+  }
+  .webcam canvas.overlay {
+    opacity: 0.66;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }

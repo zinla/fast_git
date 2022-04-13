@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parent.$ref.child</title>
+    <link rel="stylesheet" href="../css/common.css">
+</head>
+<body>
+
+    <div id="app">
+        <parent-div text="car"></parent-div>
+        <parent-div text="plane"></parent-div>
+        <parent-div text="motor"></parent-div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script>
+        Vue.component('parent-div',{
+            props: ['text'],
+            template:`<div>div:{{text}}</div>`,
+            mounted(){
+                console.log(this.text+"   component mounted");
+            },
+        })
+        new Vue({
+            el:"#app",
+            data(){
+                return {
+                    data:"Alen",
+                }
+            },
+            mounted(){
+                console.log("app created");
+            }
+
+           
+        })
+    </script>
+</body>
+</html>

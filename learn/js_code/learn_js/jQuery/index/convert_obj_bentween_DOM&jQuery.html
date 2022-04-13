@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <input type="checkbox" name="" id="gender" value="男" checked>男
+   
+
+    
+    <script>
+         $('document').ready(function(){
+
+        let gender = document.getElementById('gender'); //js obj
+        console.log(gender);
+        console.log(gender.value);
+        console.log(gender.checked); //true
+        let j_gender = $('#gender')  //jQuery obj
+        console.log(j_gender);
+        //jquery 类似与数组的对象
+        console.log(j_gender[0]);
+        console.log(j_gender.get(0));
+        console.log(j_gender.val()); //val() === gender.value
+        console.log(j_gender.attr("checked")); 
+        console.log(j_gender.attr("id")); 
+        console.log(j_gender.attr("type")); //attr() 可以获取属性值 
+
+
+         })
+    </script>
+</body>
+</html>

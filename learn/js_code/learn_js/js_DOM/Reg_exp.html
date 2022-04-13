@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        
+
+        \w  =>字母,数字,下划线  等价与 [a-zA-Z0-9_]
+        \W  =>非(字母,数字,下划线)
+        \d  =>数字
+        \D  =>非数字
+        \.  =>.
+        .  =>任意字符
+        \^  =>^  =>表示匹配项后面的第一个字符开头
+        \$  =>$  =>表示匹配项前面的第一个字符开头
+        {n} => 表示重复前一项次数n
+        {m,n} => 表示重复前一项次数m到n之间
+        [abc] => 表示a或b或c
+        [4-9] =>表示4到9
+        | =>表示或者
+        + =>匹配前一项1次或者多次
+        * =>匹配前一项0次或者多次
+        ? =>匹配前一项0次或者1次
+
+        */
+        //判断是否是邮箱
+        let email = 'abc@abc.com';
+        let reg = /^\w+\@\w+\.\w+$/; 
+        if(reg.test(email)){
+            console.log('true');
+        }
+        else{
+            console.log('false');
+        }
+        //判断是否座机
+        let phone = '029-2394565';
+        let reg1 = /^\d{3,4}-\d{8}$/
+        console.log(reg1.test(phone));
+
+        //判断是否手机号
+        let telreg = /^1[3-9]\d{9}$/
+        let tel1 = '15299537544';
+        console.log(telreg.test(tel1));
+
+        //验证年龄 0-120之间
+        let ageReg = /^\d{1,2}$|1[01]\d$|^120$/;
+        let age = 12;
+        console.log(ageReg.test(age));
+        
+        //验证邮箱
+        let Regemail = /^\w+@\w+(\.\w{2,3}){1,2}/
+        let email1 = 'aa@aa.com';
+        console.log(Regemail.test(email1));
+
+        //验证日期
+        let dateReg = /^\d{4}[/-]\d{1,2}[/-]\d{1,2}$/
+        let date1 = '1800-10-10';
+        console.log(dateReg.test(date1));
+
+        //验证姓名 (二到四个汉字)
+        let nameReg = /^[\u4E00-\u9FA5]{1,100}$/
+        let name1 = '路汗'
+        let name2 = '五一发'
+        console.log(nameReg.test(name1));
+        console.log(nameReg.test(name2));
+    </script>
+    
+</body>
+</html>

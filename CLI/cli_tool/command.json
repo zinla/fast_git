@@ -1,0 +1,12 @@
+{ 
+    "discription": "my command list",
+    "commands":{
+        "py_env_de":"conda deactivate",
+        "ls":"ls -l",
+        "yay":"yay"
+    },
+    "may_will_use":{
+        "py_env":"source /opt/anaconda/bin/activate google"
+    }
+
+}

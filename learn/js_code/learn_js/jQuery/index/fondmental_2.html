@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Web</title>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+ 
+   
+    <style>
+        body{
+            font-size: 17px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            line-height: 1.5em;
+        }
+        header{
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px #000 solid;
+            margin-bottom: 10px;
+        }
+        .container{
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- <h1>Michelle Web</h1> -->
+        <h1>jQuery Web</h1>
+    </header>
+    <main>
+        <div id="container">
+
+            <h3>mouse event</h3>
+            <button id="btn1" class="btnclass1">Button 1</button>
+            <button id="btn2">Button 2</button>
+
+            <p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt dolor rem repellendus adipisci ducimus, placeat dolorum quisquam laboriosam tempora, totam sed expedita eligendi obcaecati officia nostrum nam dolore ratione alias.</p>
+            
+        </div>
+    </main>
+    <script>
+        $('document').ready(function(){  // 页面完全加载好了以后再执行js code
+        
+                // $('#btn1').click(function(){
+                // alert('btn clicked');
+                // });
+                //上下这两句代码有同样的功能，上面的是用click，下面的是on里面有click，function
+                // $('#btn1').on('click',function(){
+                // alert('btn clicked');
+                // });
+
+
+                // 点击按钮，下面实现P tag里面的内容hide
+                // $('#btn1').on('click',function(){
+                //     // $('.para1').hide();
+                //     $('.para1').toggle();
+                // })
+                
+                // $('#btn2').on('click',function(){
+                //     $('.para1').show();
+                // })
+
+                //双点击
+                // $('#btn1').dblclick(function(){
+                //     $('.para1').toggle();
+                // });
+
+                // hover()
+                // $('#btn1').hover(function(){
+                //     $('.para1').toggle();
+                // });
+                // //
+                $('#btn2').on('hover',function(){
+                    $('.para1').hide();
+                });
+
+                // $('#btn2').on('mouseenter',function(){
+                //     $('.para1').hide();
+                // });
+
+                // $('#btn2').on('mouseenter',function(){
+                //     // 当鼠标指针进入（穿过）元素时
+                //     $('.para1').hide();
+                // });
+
+                // $('#btn2').on('mouseleave',function(){
+                //     // 当鼠标指针进入（穿出）元素时
+                //     $('.para1').hide();
+                // });
+
+                // $('#btn2').on('mouseover',function(){
+                //     // 当鼠标指针进入（穿过）元素时
+                //     $('.para1').hide();
+                // });
+
+                // $('#btn2').on('mousemove',function(){
+                //     // 当鼠标指针进入（穿过）元素时
+                //     $('.para1').hide();
+                // });
+
+                // $('#btn2').on('mousedown',function(){
+                //     // 当鼠标指针进入（穿过）元素时
+                //     $('.para1').hide();
+                // });
+                /*mouseenter：当鼠标移入某元素时触发。
+                mouseleave：当鼠标移出某元素时触发。
+                mouseover：当鼠标移入某元素时触发，移入和移出其子元素时也会触发。
+
+                mouseout：当鼠标移出某元素时触发，移入和移出其子元素时也会              触发。
+
+                mousemove：鼠标在某元素上移动时触发，即使在其子元素上也会触             发。
+
+                mouseout、mouseover和mouseleave、mouseenter最大的区             别，在于子元素连带触发。*/
+
+
+
+                // $('#btn1').click(function(e){
+                //     console.log(e);
+                //     //gives us a lot aff mouse event function
+                // });
+
+                    //in function if we pass in e
+                // $('#btn1').click(function(e){
+                //     console.log(e.currentTarget.id);
+                //     console.log(e.currentTarget.innerHTML);
+                //     console.log(e.currentTarget.outerHTML);
+                //     console.log(e.currentTarget.className);
+                //     //we can get id and innerHTML by this
+
+
+                // $('#btn2').on('mousedown',function(e){
+                //  // 当鼠标指针进入（穿过）元素时
+                //  $('.para1').hide();
+                // });
+
+                // });
+
+
+
+
+                
+
+
+
+
+        }); 
+        
+
+    </script>
+</body>
+</html>

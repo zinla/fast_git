@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大麦网</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .city,
+        .type,
+        .content {
+            border: 1px solid #eee;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .city li,
+        .type li {
+            padding: 5px 10px;
+            margin: 0px, 5px;
+
+        }
+
+        .city li:not(:first-child),
+        .type li:not(:first-child) {
+            cursor: pointer;
+        }
+
+        .active {
+            background: orange;
+            color: white;
+        }
+
+        .content img {
+            width: 180px;
+        }
+
+        .flex .title {
+            font-weight: bold;
+        }
+
+        .flex .description div {
+            margin: 10px;
+        }
+
+        .content .item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .container {
+            width: 800px;
+        }
+
+        [v-clock] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- v-clock 页面加载完后会消失 -->
+    <div id="app" v-cloak>
+        <div class="container">
+            <ul class="flex city">
+                <li>城市</li>
+                <li @click="setCity(index)" :class="{active:index===cityActive}" v-for="(item,index) in cityList">
+                    {{item}}</li>
+            </ul>
+
+            <ul class="flex type">
+                <li>分类</li>
+                <li @click="setType(index)" :class="index===typeActive?'active':''" v-for="(item,index) in typeList">
+                    {{item}}</li>
+            </ul>
+
+            <ul class="content">
+                <!-- 俩种方法 -->
+                <div>数量counter：{{counter}}</div>
+                <div>数量count：{{count}}</div>
+                <li>
+                    <div class="flex item" v-for="(item,index) in dataList">
+                        <div>
+                            <a :href="'./damai_detail1.0.html?id='+item.id" target="_blank">
+                                <img :src="item.verticalPic" alt="img"/>
+                            </a>
+                            
+                        </div>
+                        <div class="description">
+                            <div class="title">[{{item.cityname}}] {{item.name}}</div>
+                            <div>{{item.categoryname}}</div>
+                            <div>{{item.venue}}</div>
+                            <div>{{item.showtime}}</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.9/vue.js"></script>
+    <script>
+        Vue.config.devtools = true;
+        Vue.config.productionTip = false
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    cityActive: 0,
+                    typeActive: 0,
+                    cityList: ["全部", "北京", "上海", "深圳", "广州"],
+                    typeList: ["全部", "演唱会", "曲苑杂坛", "话剧歌剧", "音乐会", "展览休闲"],
+                    dataList: [],
+                    count: 0,
+                }
+            },
+            // vue 的计算属性,里面的方法必须得返回一个值
+            computed: {
+                counter() {
+                    return this.dataList.length
+                }
+            },
+            created() {
+                this.getData()
+            },
+
+            watch: { //vue 的数据监听器
+                cityActive(nval, oval) { //nval is the 新值 ， oval is the 之前的值
+                    // console.log(nval,oval);
+                    this.getData() //nval 和oval 不一样时候执行函数
+                },
+                typeActive(nval, oval) { //nval is the 新值 ， oval is the 之前的值
+                    // console.log(nval,oval);
+                    this.getData()  //nval 和oval 不一样时候执行函数
+                }
+
+            },
+            methods: {
+                async getData() {
+                    let data = await axios.get("./data/data.json").then(r => { return r.data.pageData });
+                    if (this.cityActive != 0) {
+                        data.resultData = data.resultData.filter(r => r.cityname === this.cityList[this.cityActive])
+                    }
+                    if (this.typeActive != 0) {
+                        data.resultData = data.resultData.filter(r => r.categoryname === this.typeList[this.typeActive])
+                    }
+                    this.dataList = data.resultData;
+                    this.count = data.resultData.length;
+
+                    console.log(data.resultData)
+                },
+                setCity(index) {
+                    this.cityActive = index;
+
+
+                },
+                setType(index) {
+                    this.typeActive = index;
+
+                }
+            },
+        })
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+body.home .logo-and-tagline {
+  grid-template-columns: 1fr 2fr;
+}
+.logo-and-tagline {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  margin: 20px;
+  gap: 2 rem;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 1 rem 0;
+}
+a {
+  color: #131609;
+  text-decoration: none;
+}
+
+.main-nav {
+  padding: 0.5rem 0;
+}
+@media screen and (min-width: 1200px) {
+  .main-nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 15px;
+    margin: 12px;
+  }
+  input[type="search"]{
+    background: #463d38;
+    border: ivory;
+    border-radius: 15px;
+    margin: 1px 0 1px 1px;
+    padding: 0 10px 0 10px;
+    max-height: none;
+    width: 40%;
+    outline: none;
+    box-sizing: border-box;
+    vertical-align: top;
+    color: rgb(255 255 255);
+  }
+  .main-nav,
+  .page-wrap {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+  .sr-only {
+    font-size: 2em;
+    font-weight: bolder;
+    line-height: normal;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+  .main-nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 15px;
+    margin: 12px;
+  }
+  input[type="search"]{
+    background: #463d38;
+    border: ivory;
+    border-radius: 15px;
+    margin: 1px 0 1px 1px;
+    padding: 0 10px 0 10px;
+    max-height: none;
+    width: 50%;
+    outline: none;
+    box-sizing: border-box;
+    vertical-align: top;
+    color: rgb(255 255 255);
+  }
+  .main-nav,
+  .page-wrap {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+  .sr-only {
+    font-size: 1.8em;
+    font-weight: bolder;
+    line-height: normal;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .main-nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 15px;
+    margin: 12px;
+    text-align: center;
+  }
+  input[type="search"]{
+    background: #463d38;
+    border: ivory;
+    border-radius: 15px;
+    margin: 1px 0 1px 1px;
+    padding: 0 10px 0 10px;
+    max-height: none;
+    width: 50%;
+    outline: none;
+    box-sizing: border-box;
+    vertical-align: top;
+    color: rgb(255 255 255);
+  }
+  .main-nav,
+  .page-wrap {
+    display: grid;
+    grid-template-columns: 10% 80%;
+  }
+  .sr-only {
+    font-size: 1.7em;
+    font-weight: bolder;
+    line-height: normal;
+  }
+}
+@media only screen and (min-width: 520px) and (max-width: 767px) {
+  .main-nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 15px;
+    margin: 12px;
+    text-align: center;
+  }
+  input[type="search"]{
+    background: #463d38;
+    border: ivory;
+    border-radius: 15px;
+    margin: 1px 0 1px 1px;
+    padding: 0 10px 0 10px;
+    max-height: none;
+    width: 65%;
+    outline: none;
+    box-sizing: border-box;
+    vertical-align: top;
+    color: rgb(255 255 255);
+  }
+  .main-nav,
+  .page-wrap {
+    display: grid;
+    grid-template-columns: 5% 95%;
+  }
+  .sr-only {
+    font-size: 1.5em;
+    font-weight: bolder;
+    line-height: normal;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .main-nav ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 15px;
+    margin: 12px;
+  }
+  input[type="search"]{
+    background: #463d38;
+    border: ivory;
+    border-radius: 15px;
+    margin: 1px 0 1px 1px;
+    padding: 0 10px 0 10px;
+    max-height: none;
+    width: 80%;
+    outline: none;
+    box-sizing: border-box;
+    vertical-align: top;
+    color: rgb(255 255 255);
+  }
+  .main-nav,
+  .page-wrap {
+    display: grid;
+    grid-template-columns: -3% 95%;
+  }
+  .sr-only {
+    font-size: 1.3em;
+    font-weight: bolder;
+    line-height: normal;
+  }
+}
+
+.main-nav > *,
+.page-wrap > * {
+  grid-column: 2/3;
+}
+
+.main-nav ul a {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.main-nav ul .main-nav-search {
+  /* margin-left: auto; */
+  margin: auto;
+}
+.main-nav ul .main-nav-search a {
+  background: none;
+  padding: 0;
+}
+.main-nav ul a {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  font-weight: bolder;
+}
+
+.main-nav ul .main-nav-search a {
+  background: none;
+  padding: 0;
+}
+.main-nav ul a {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+.main-nav ul .main-nav-search svg {
+  height: 32px;
+  width: 32px;
+  display: block;
+  fill: #ff894e;
+}
+input[type="search"]::-webkit-search-cancel-button{
+  display: none;
+  -webkit-appearance: none;
+
+}
+
